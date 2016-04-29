@@ -1,0 +1,23 @@
+
+
+.app-content.new-room {
+  background-image: url('../../../images/meeting_room_2.jpg');
+  background-size: cover;
+  padding-top: 150px;
+}
+
+
+
+.black-div {
+  background: black;
+  opacity: 0.8;
+  color: white;
+  padding: 15px;
+  border-radius: 4px;
+  margin-bottom: 50px;
+
+  .bootstrap-datetimepicker-widget {
+    color: black;
+  }
+}
+

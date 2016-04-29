@@ -1,0 +1,109 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the home page.
+// -----------------------------------------------------------------------------
+
+.navigation {
+  position: absolute;
+  width: 100%;
+}
+
+.hero-image {
+  background-image: url('../../../images/bg.jpg');
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+}
+
+.hero-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.hero-text {
+
+  color: white;
+
+  h1 {
+    font-size: 56px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+  }
+
+  h3 {
+    font-size: 30px;
+  }
+}
+
+.hero-form {
+  padding-top: 50px;
+  padding-bottom: 200px;
+
+  .form-group:first-child select {
+    border-radius: 3px 0 0 3px;
+  }
+
+  input {
+    border-radius: 0;
+    margin-left: -5px;
+    border: 0;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    color: black;
+    height: 50px;
+  }
+
+  select {
+    -webkit-appearance: none;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    outline: none;
+    background-color: white;
+    margin-left: -4px;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    height: 50px;
+  }
+
+  button[type="submit"] {
+    height: 34px;
+    background-color: #35e4bd;
+    border: 1px solid #35e4bd;
+    padding: 0 11px;
+    margin-left: -5px;
+    vertical-align: bottom;
+    border-radius: 0 3px 3px 0;
+    height: 50px;
+  }
+
+
+  .datepicker-div {
+
+    border-radius: 0;
+    margin-left: -5px;
+    height: 50px;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+
+    input {
+
+      border: 0;
+
+    }
+
+
+    .md-datepicker-triangle-button {
+      right: 9px;
+      top: 12px;
+    }
+
+
+  }
+}
+
+div.date {
+  margin-right: -6px;
+}
+

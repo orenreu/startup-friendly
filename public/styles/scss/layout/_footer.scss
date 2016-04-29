@@ -1,0 +1,11 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site/application.
+// -----------------------------------------------------------------------------
+
+footer.site-footer {
+  height: $footerHeight;
+  background-color: black;
+  position: absolute;
+  width: 100%;
+  left: 0;
+}

@@ -1,0 +1,108 @@
+<div class="app-content new-room">
+    <div class="container">
+
+        <div class="black-div col-xs-12 col-sm-8 col-sm-offset-2">
+            <div>
+                <h1>New Room</h1>
+            </div>
+            <form ng-submit="ctrl.addRoom(ctrl.newRoom)">
+                <div class="row">
+                    <div class="form-group col-xs-12 col-sm-6">
+                        <label for="name_input">Name</label>
+                        <input type="text" class="form-control" ng-model="ctrl.newRoom.name" id="name_input"
+                               placeholder="Name">
+                    </div>
+                    <div class="form-group col-xs-12 col-sm-6">
+                        <label for="company_input">Company</label>
+                        <input type="text" class="form-control" ng-model="ctrl.newRoom.company" id="company_input"
+                               placeholder="Company">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-xs-12 col-sm-6">
+                        <label for="address_input">Address</label>
+                        <input type="text" class="form-control" ng-model="ctrl.newRoom.address" id="address_input"
+                               placeholder="Address">
+                    </div>
+                    <div class="form-group col-xs-6 col-sm-3">
+                        <label for="floor_input">Floor</label>
+                        <input type="text" class="form-control" ng-model="ctrl.newRoom.floor" id="floor_input"
+                               placeholder="Floor">
+                    </div>
+                    <div class="form-group col-xs-6 col-sm-3">
+                        <label for="entrance_input">Entrance</label>
+                        <input type="text" class="form-control" ng-model="ctrl.newRoom.entrance" id="entrance_input"
+                               placeholder="Entrance">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-xs-12 col-sm-6">
+                        <label for="city_part_input">City Part</label>
+                        <select class="form-control" id="city_part_input" ng-model="ctrl.newRoom.city_part">
+                            <option disabled selected>Select</option>
+                            <option value="south">South Tel Aviv</option>
+                            <option value="center">Center Tel Aviv</option>
+                            <option value="north">North Tel Aviv</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-xs-12 col-sm-6">
+                        <label for="guests_input">Max No. of Guests</label>
+                        <div class="input-group">
+                            <input type="number" class="form-control" ng-model="ctrl.newRoom.guests" id="guests_input"
+                                   placeholder="Max No. of Guests">
+                            <div class="input-group-addon">Guests</div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="form-group col-xs-12 col-sm-6">
+                        <label for="wifi_name_input">Wifi Network Name</label>
+                        <input type="text" class="form-control" ng-model="ctrl.newRoom.wifi_name" id="wifi_name_input"
+                               placeholder="Wifi Network Name">
+                    </div>
+                    <div class="form-group col-xs-12 col-sm-6">
+                        <label for="wifi_pass_input">Wifi Network Password</label>
+                        <input type="text" class="form-control" ng-model="ctrl.newRoom.wifi_pass" id="wifi_pass_input"
+                               placeholder="Wifi Network Password">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-xs-12 col-sm-6">
+                        <label for="description_input">Description</label>
+                        <textarea class="form-control" rows="3" id="description_input" ng-model="ctrl.newRoom.description"></textarea>
+                    </div>
+                </div>
+
+                <div class="divider-white"></div>
+                <h4 class="text-center">
+                    Contact Person
+                </h4>
+                <div class="row">
+                    <div class="form-group col-xs-12 col-sm-6">
+                        <label for="contact_name_input">Contact Person Name</label>
+                        <input type="text" class="form-control" ng-model="ctrl.newRoom.contact_name"
+                               id="contact_name_input"
+                               placeholder="Contact Person Name">
+                    </div>
+                    <div class="form-group col-xs-12 col-sm-6">
+                        <label for="email_input">Email address</label>
+                        <input type="email" class="form-control" id="email_input" placeholder="Email" ng-model="ctrl.newRoom.email">
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="form-group col-xs-12 col-sm-6">
+                        <label for="phone_input">Phone</label>
+                        <input type="text" class="form-control" id="phone_input" placeholder="Phone" ng-model="ctrl.newRoom.phone">
+                    </div>
+                </div>
+                <div class="row submit-div">
+                    <button type="submit" class="btn btn-submit center-block">Submit</button>
+                </div>
+
+            </form>
+            <image-upload></image-upload>
+        </div>
+    </div><!-- .container -->
+</div><!-- .app-content -->

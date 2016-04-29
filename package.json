@@ -1,0 +1,33 @@
+{
+  "name": "startup-friendly",
+  "version": "1.0.0",
+  "description": "An app that helps share meeting rooms between startups.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Meeting",
+    "Rooms",
+    "Share",
+    "Community",
+    "Startups"
+  ],
+  "author": "Benzo Media",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.5.5",
+    "angular-animate": "^1.5.5",
+    "angular-aria": "^1.5.5",
+    "angular-material": "^1.0.8",
+    "angular-messages": "^1.5.5",
+    "angular-mocks": "^1.5.5",
+    "angular-sanitize": "^1.5.5",
+    "angular-ui-router": "^0.2.18",
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "moment": "^2.13.0",
+    "rethinkdb": "^2.3.1",
+    "thinky": "^2.2.8"
+  }
+}

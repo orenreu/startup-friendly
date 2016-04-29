@@ -1,0 +1,21 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+
+
+.navbar-nav .sign-in {
+  margin-top: 40px;
+
+  &:hover{
+    background-color: transparent;
+  }
+}
+
+nav.navbar {
+  padding-top: 30px;
+}
+
+.navbar-default {
+  background-color: transparent;
+  border-color: transparent;
+}

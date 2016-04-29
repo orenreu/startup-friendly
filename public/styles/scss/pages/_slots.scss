@@ -1,0 +1,80 @@
+
+
+.app-content.edit-slots {
+  background-image: url('../../../images/calendar.jpg');
+  background-size: cover;
+  padding-top: 150px;
+  min-height: 100vh;
+  width: 100vw;
+}
+
+
+
+.white-div {
+  background: white;
+  opacity: 0.8;
+  color: black;
+  padding: 15px;
+  border-radius: 4px;
+  margin-bottom: 50px;
+
+}
+
+.company-logo {
+  max-height: 65px;
+  max-width: 150px;
+  margin-top: 15px;
+
+  @include respond-to('small') {
+    margin-top: 0;
+  }
+
+}
+
+
+.slot-table {
+  text-align: center;
+
+  th {
+    text-align: center;
+  }
+}
+
+
+.slot-form {
+
+
+  .form-group{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+
+}
+
+.md-datepicker-input-mask {
+  height: 36px;
+  width: 308px;
+  position: relative;
+  background: transparent;
+  pointer-events: none;
+  cursor: text;
+}
+
+.md-default-theme .md-datepicker-input-container.md-datepicker-invalid, .md-datepicker-input-container.md-datepicker-invalid, .md-default-theme .md-datepicker-input-container, .md-datepicker-input-container {
+  border-bottom-color: transparent !important
+}
+
+.datepicker-div {
+  background-color: white;
+  border-radius: 4px;
+  height: 36px;
+}
+
+.md-datepicker-calendar-pane {
+  margin-top: -2px;
+}
+
+.form-inline .form-control.day-select {
+  width: 185px;
+}
