@@ -5996,6 +5996,15 @@ label {
   left: calc(50% - 62px);
   z-index: 10; }
 
+.upload-logo-div {
+  width: 94px;
+  height: 90px;
+  border: 2px dashed;
+  margin: 16px auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
 .app-content.room-list {
   padding-top: 150px; }
 
@@ -6015,7 +6024,9 @@ label {
   border-radius: 3px 3px 0 0; }
 
 .room-info {
-  padding: 28px 10px 20px;
+  display: inline-block;
+  width: 100%;
+  padding: 33px 10px 20px;
   -webkit-transform: rotate(7deg);
   -ms-transform: rotate(7deg);
   -moz-transform: rotate(7deg);
@@ -6032,6 +6043,18 @@ label {
     font-size: 12px;
     color: #8c8c8c;
     margin: 0; }
+
+.room-text {
+  padding: 0; }
+
+.room-logo-div {
+  display: flex;
+  justify-content: flex-end;
+  padding-left: 0; }
+
+.room-logo-div img {
+  max-width: 90px;
+  max-height: 50px; }
 
 .diagonal {
   background: #FFFFFF;
@@ -6135,17 +6158,26 @@ label {
       border-radius: 3px 0 0 3px; } }
   .hero-form input {
     border-radius: 0;
-    border: 0;
+    border: 1px solid #ccc;
     color: black;
     height: 50px; }
+    @media (min-width: 768px) {
+      .hero-form input {
+        border: 0; } }
   .hero-form select {
     -webkit-appearance: none;
     background: transparent;
-    border: 0;
+    border: 1px solid #ccc;
     border-radius: 0;
     outline: none;
     background-color: white;
     height: 50px; }
+    @media (min-width: 768px) {
+      .hero-form select {
+        border: 0; } }
+  @media (min-width: 768px) {
+    .hero-form select.from {
+      border-right: 1px solid #ccc; } }
   .hero-form button[type="submit"] {
     height: 34px;
     background-color: #35e4bd;
@@ -6161,10 +6193,17 @@ label {
   .hero-form .datepicker-div {
     border-radius: 0;
     height: 50px;
-    border-left: 1px solid #ccc;
-    border-right: 1px solid #ccc; }
+    border: 1px solid #ccc; }
+    @media (min-width: 768px) {
+      .hero-form .datepicker-div {
+        border: 0;
+        border-left: 1px solid #ccc;
+        border-right: 1px solid #ccc; } }
     .hero-form .datepicker-div input {
       border: 0; }
+      @media (min-width: 768px) {
+        .hero-form .datepicker-div input {
+          border: 0; } }
     .hero-form .datepicker-div .md-datepicker-triangle-button {
       right: 9px;
       top: 16px;

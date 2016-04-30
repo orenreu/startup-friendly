@@ -31,11 +31,61 @@
         <md-datepicker  ng-model="ctrl.newSlot.date" md-placeholder="When?"></md-datepicker>
     </div>
     <div class="form-group">
-        <select name="hours" class="form-control">
-            <option disabled selected>For how long?</option>
-            <option value="1">1 hour</option>
-            <option value="2">2 hours</option>
-            <option value="3">3 hours</option>
+        <select name="from" class="form-control from">
+            <option disabled selected>Start</option>
+            <option ng-value="8">08:00</option>
+            <option ng-value="9">09:00</option>
+            <option ng-value="10">10:00</option>
+            <option ng-value="11">11:00</option>
+            <option ng-value="12">12:00</option>
+            <option ng-value="13">13:00</option>
+            <option ng-value="14">14:00</option>
+            <option ng-value="15">15:00</option>
+            <option ng-value="16">16:00</option>
+            <option ng-value="17">17:00</option>
+            <option ng-value="18">18:00</option>
+            <option ng-value="19">19:00</option>
+            <option ng-value="20">20:00</option>
+            <option ng-value="21">21:00</option>
+            <option ng-value="22">22:00</option>
+            <option ng-value="23">23:00</option>
+            <option ng-value="0">00:00</option>
+            <option ng-value="1">01:00</option>
+            <option ng-value="2">02:00</option>
+            <option ng-value="3">03:00</option>
+            <option ng-value="4">04:00</option>
+            <option ng-value="5">05:00</option>
+            <option ng-value="6">06:00</option>
+            <option ng-value="7">07:00</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <select name="to" class="form-control">
+            <option disabled selected>End</option>
+            <option ng-value="8">08:00</option>
+            <option ng-value="9">09:00</option>
+            <option ng-value="10">10:00</option>
+            <option ng-value="11">11:00</option>
+            <option ng-value="12">12:00</option>
+            <option ng-value="13">13:00</option>
+            <option ng-value="14">14:00</option>
+            <option ng-value="15">15:00</option>
+            <option ng-value="16">16:00</option>
+            <option ng-value="17">17:00</option>
+            <option ng-value="18">18:00</option>
+            <option ng-value="19">19:00</option>
+            <option ng-value="20">20:00</option>
+            <option ng-value="21">21:00</option>
+            <option ng-value="22">22:00</option>
+            <option ng-value="23">23:00</option>
+            <option ng-value="0">00:00</option>
+            <option ng-value="1">01:00</option>
+            <option ng-value="2">02:00</option>
+            <option ng-value="3">03:00</option>
+            <option ng-value="4">04:00</option>
+            <option ng-value="5">05:00</option>
+            <option ng-value="6">06:00</option>
+            <option ng-value="7">07:00</option>
         </select>
     </div>
     <button type="submit">Go Go Go!</button>

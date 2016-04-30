@@ -19,6 +19,7 @@ function saveRoom(req, res) {
         wifi_pass: room.wifi_pass,
         description: room.description,
         image: room.image,
+        logo: room.logo,
         contact_name: room.contact_name,
         email: room.email,
         phone: room.phone,

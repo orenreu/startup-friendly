@@ -13,8 +13,14 @@
                         <div class="room-info">
                             <h2>{{ room.name }}</h2>
                             <h3>{{ room.company }}</h3>
-                            <p> {{ room.description }}</p>
+                            <div class="room-text col-xs-8">
+                                <p> {{ room.description }}</p>
+                            </div>
+                            <div class="room-logo-div col-xs-4">
+                                <img class="room-logo img-responsive" ng-src="{{ room.logo }}">
+                            </div>
                         </div>
+
                     </div>
                 </div>
             </div>

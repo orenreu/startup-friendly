@@ -23,6 +23,7 @@ var Room = thinky.createModel("Room", {
     wifi_pass: type.string(),
     description: type.string(),
     image: type.string(),
+    logo: type.string(),
     contact_name: type.string(),
     email: type.string(),
     phone: type.string(),

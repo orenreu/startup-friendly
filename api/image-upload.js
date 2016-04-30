@@ -45,4 +45,34 @@ router.post('/', upload.single('file'), function (req, res, next) {
 
 });
 
+
+
+
+router.post('/logo', upload.single('file'), function (req, res, next) {
+
+    // Grab extension from uploaded file
+    var re = /(?:\.([^.]+))?$/;
+    var extension = re.exec(req.file.originalname)[1];
+
+    // Move the file to uploads folder
+    var path = './public/uploads/'+req.file.filename+"."+extension;
+    fs.rename(req.file.path, path);
+
+    // Upload file to cloudinary
+    cloudinary.uploader.upload(path, function(result) {
+        // Send uploaded image url back
+        var url = result.url
+        res.send(url);
+
+        // Delete local copy
+        fs.unlink(path);
+    },{
+        width: 90,
+        height: 90,
+        crop: "fit"
+    });
+
+
+});
+
 module.exports = router;

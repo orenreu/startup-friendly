@@ -60,19 +60,34 @@
 
   input {
     border-radius: 0;
-    border: 0;
+    border: 1px solid #ccc;
     color: black;
     height: 50px;
+
+    @include respond-to("small") {
+      border:0;
+  }
+
   }
 
   select {
     -webkit-appearance: none;
     background: transparent;
-    border: 0;
+    border: 1px solid #ccc;
     border-radius: 0;
     outline: none;
     background-color: white;
     height: 50px;
+
+    @include respond-to("small") {
+      border:0;
+    }
+  }
+
+  select.from {
+    @include respond-to("small") {
+      border-right: 1px solid #ccc;
+    }
   }
 
   button[type="submit"] {
@@ -95,13 +110,21 @@
 
     border-radius: 0;
     height: 50px;
-    border-left: 1px solid #ccc;
-    border-right: 1px solid #ccc;
+    border: 1px solid #ccc;
+
+    @include respond-to("small" ) {
+      border: 0;
+      border-left: 1px solid #ccc;
+      border-right: 1px solid #ccc;
+    }
 
     input {
 
-      border: 0;
+      border:0;
 
+      @include respond-to("small" ) {
+        border: 0;
+      }
     }
 
 

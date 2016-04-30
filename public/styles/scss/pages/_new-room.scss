@@ -40,3 +40,14 @@
   left: calc(50% - 62px);
   z-index: 10;
 }
+
+
+.upload-logo-div {
+  width: 94px;
+  height: 90px;
+  border: 2px dashed;
+  margin: 16px auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

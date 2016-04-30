@@ -1,0 +1,14 @@
+<div ng-controller="LogoUploadController" class="upload-image text-center">
+
+    <div class="loading-div text-center" ng-show="uploadingImage">
+        <md-progress-circular class="center-block" md-mode="indeterminate"></md-progress-circular>
+        Uploading image...
+    </div>
+
+    <button class="btn btn-submit" type="file" ngf-select="uploadFiles($file, $invalidFiles)"
+            accept="image/*"  ngf-max-size="5MB">
+        Upload Logo</button>
+    <div>
+        {{errorMsg}}
+    </div>
+</div>

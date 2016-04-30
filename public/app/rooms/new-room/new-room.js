@@ -29,6 +29,7 @@ angular.module('app').directive('newRoom', function () {
                 wifi_pass: "0544322918",
                 description: "What a great room",
                 image: "",
+                logo: "",
                 contact_name: "Oren Reuveni",
                 email: "orenreu@gmail.com",
                 phone: "054-4322918"
@@ -63,8 +64,22 @@ angular.module('app').directive('newRoom', function () {
             $scope.$on('$destroy', unbindImageUploaded);
 
 
+            //Listen to time change and reBootstrap the app
+            var unbindLogoUploaded = $rootScope.$on('logoUploaded', function (event, data) {
+                ctrl.newRoom.logo = data.url;
+            });
+
+            //Unbinding from rootScope (see more at:"http://stackoverflow.com/questions/11252780/whats-the-correct-way-to-communicate-between-controllers-in-angularjs")
+            $scope.$on('$destroy', unbindLogoUploaded);
+
+
+
             ctrl.isImage = function(){
                 return ctrl.newRoom.image !== "";
+            }
+
+            ctrl.isLogo = function(){
+                return ctrl.newRoom.logo !== "";
             }
 
 

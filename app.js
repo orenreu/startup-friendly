@@ -22,6 +22,7 @@ app.use(bodyParser.json());
 // Routes
 app.use('/api/room', room);
 app.use('/api/image-upload', imageUpload);
+app.use('/api/logo-upload', imageUpload);
 
 
 // Serve index file for all known paths
