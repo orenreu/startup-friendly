@@ -2,72 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6f05784-5d46-46a6-9e4a-2359c2b88cd4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.bash_profile" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/image-upload.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/rooms/search-bar/search-bar.component.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/rooms/search-bar/search-bar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/styles/scss/pages/_room-list.scss" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/angular-file-upload/.jshintrc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/angular-file-upload/.npmignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/angular-file-upload/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/angular-file-upload/bower.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/angular-file-upload/dist/angular-file-upload.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/angular-file-upload/dist/angular-file-upload.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/angular-file-upload/dist/angular-file-upload.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/angular-file-upload/dist/angular-file-upload.min.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/angular-file-upload/examples/console-sham.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/angular-file-upload/examples/console-sham.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/angular-file-upload/examples/image-preview/controllers.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/angular-file-upload/examples/image-preview/directives.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/angular-file-upload/examples/image-preview/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/angular-file-upload/examples/image-preview/upload.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/angular-file-upload/examples/image-preview/uploads/gap.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/angular-file-upload/examples/simple/controllers.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/angular-file-upload/examples/simple/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/angular-file-upload/examples/simple/upload.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/angular-file-upload/examples/simple/uploads/gap.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/angular-file-upload/examples/without-bootstrap/controllers.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/angular-file-upload/examples/without-bootstrap/directives.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/angular-file-upload/examples/without-bootstrap/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/angular-file-upload/examples/without-bootstrap/style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/angular-file-upload/examples/without-bootstrap/upload.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/angular-file-upload/examples/without-bootstrap/uploads/gap.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/angular-file-upload/gulpfile.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/angular-file-upload/license.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/angular-file-upload/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/angular-file-upload/src/config.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/angular-file-upload/src/directives/FileDrop.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/angular-file-upload/src/directives/FileOver.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/angular-file-upload/src/directives/FileSelect.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/angular-file-upload/src/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/angular-file-upload/src/services/FileDirective.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/angular-file-upload/src/services/FileDrop.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/angular-file-upload/src/services/FileItem.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/angular-file-upload/src/services/FileLikeObject.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/angular-file-upload/src/services/FileOver.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/angular-file-upload/src/services/FileSelect.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/angular-file-upload/src/services/FileUploader.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/angular-file-upload/src/values/options.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/app/rooms/image-upload/amazonConfig.json" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/room.js" afterPath="$PROJECT_DIR$/api/room.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/index.js" afterPath="$PROJECT_DIR$/models/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/app.js" afterPath="$PROJECT_DIR$/public/app/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/rooms/image-upload/image-upload.component.html" afterPath="$PROJECT_DIR$/public/app/rooms/image-upload/image-upload.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/rooms/image-upload/image-upload.js" afterPath="$PROJECT_DIR$/public/app/rooms/image-upload/image-upload.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/rooms/new-room/new-room.component.html" afterPath="$PROJECT_DIR$/public/app/rooms/new-room/new-room.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/rooms/new-room/new-room.js" afterPath="$PROJECT_DIR$/public/app/rooms/new-room/new-room.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/image-upload.js" afterPath="$PROJECT_DIR$/api/image-upload.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/rooms/room-list/room-list.component.html" afterPath="$PROJECT_DIR$/public/app/rooms/room-list/room-list.component.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/rooms/room-list/room-list.js" afterPath="$PROJECT_DIR$/public/app/rooms/room-list/room-list.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/rooms/slots/slots.component.html" afterPath="$PROJECT_DIR$/public/app/rooms/slots/slots.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/welcome/welcome.html" afterPath="$PROJECT_DIR$/public/app/welcome/welcome.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/rooms/search-bar/search-bar.component.html" afterPath="$PROJECT_DIR$/public/app/rooms/search-bar/search-bar.component.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/styles/css/main.css" afterPath="$PROJECT_DIR$/public/styles/css/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/styles/css/main.css.map" afterPath="$PROJECT_DIR$/public/styles/css/main.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/styles/scss/main.scss" afterPath="$PROJECT_DIR$/public/styles/scss/main.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/styles/scss/pages/_new-room.scss" afterPath="$PROJECT_DIR$/public/styles/scss/pages/_new-room.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/styles/scss/abstracts/_mixins.scss" afterPath="$PROJECT_DIR$/public/styles/scss/abstracts/_mixins.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/styles/scss/pages/_home.scss" afterPath="$PROJECT_DIR$/public/styles/scss/pages/_home.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/styles/scss/pages/_room-list.scss" afterPath="$PROJECT_DIR$/public/styles/scss/pages/_room-list.scss" />
     </list>
     <ignored path="startup-friendly.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -89,14 +33,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="image-upload.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/api/image-upload.js">
+      <file leaf-file-name="new-room.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/app/rooms/new-room/new-room.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5225">
-              <caret line="39" column="17" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
-              <folding>
-                <element signature="e#0#120#0" expanded="false" />
-              </folding>
+            <state vertical-scroll-proportion="0.335">
+              <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -119,7 +61,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/public/styles/scss/vendor/_bootstrap.scss" />
-        <option value="$PROJECT_DIR$/public/styles/scss/pages/_home.scss" />
         <option value="$PROJECT_DIR$/public/app/welcome/welcome.js" />
         <option value="$PROJECT_DIR$/public/styles/scss/pages/_slots.scss" />
         <option value="$PROJECT_DIR$/public/app/routes.js" />
@@ -129,7 +70,6 @@
         <option value="$PROJECT_DIR$/api/upload.js" />
         <option value="$PROJECT_DIR$/public/app/app.js" />
         <option value="$PROJECT_DIR$/.bash_profile" />
-        <option value="$PROJECT_DIR$/api/image-upload.js" />
         <option value="$PROJECT_DIR$/models/index.js" />
         <option value="$PROJECT_DIR$/public/app/rooms/image-upload/image-upload.component.html" />
         <option value="$PROJECT_DIR$/public/app/rooms/new-room/new-room.component.html" />
@@ -138,15 +78,18 @@
         <option value="$PROJECT_DIR$/public/app/rooms/slots/slots.component.html" />
         <option value="$PROJECT_DIR$/public/app/rooms/new-room/new-room.js" />
         <option value="$PROJECT_DIR$/public/app/rooms/search-bar/search-bar.js" />
-        <option value="$PROJECT_DIR$/public/app/rooms/search-bar/search-bar.component.html" />
         <option value="$PROJECT_DIR$/public/app/welcome/welcome.html" />
         <option value="$PROJECT_DIR$/public/index.html" />
-        <option value="$PROJECT_DIR$/public/app/rooms/room-list/room-list.js" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/api/room.js" />
         <option value="$PROJECT_DIR$/public/styles/scss/main.scss" />
-        <option value="$PROJECT_DIR$/public/styles/scss/pages/_room-list.scss" />
+        <option value="$PROJECT_DIR$/public/app/rooms/room-list/room-list.js" />
+        <option value="$PROJECT_DIR$/public/app/rooms/search-bar/search-bar.component.html" />
+        <option value="$PROJECT_DIR$/public/styles/scss/pages/_home.scss" />
+        <option value="$PROJECT_DIR$/api/image-upload.js" />
+        <option value="$PROJECT_DIR$/public/styles/scss/abstracts/_mixins.scss" />
         <option value="$PROJECT_DIR$/public/app/rooms/room-list/room-list.component.html" />
+        <option value="$PROJECT_DIR$/public/styles/scss/pages/_room-list.scss" />
       </list>
     </option>
   </component>
@@ -268,6 +211,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="startup-friendly" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="startup-friendly" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="styles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scss" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="abstracts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -519,7 +488,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -528,7 +497,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -4684,30 +4653,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/styles/scss/pages/_home.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15833333">
-          <caret line="10" column="50" selection-start-line="10" selection-start-column="50" selection-end-line="10" selection-end-column="50" />
-          <folding>
-            <marker date="1461912000000" expanded="true" signature="240:280" placeholder="{...}" />
-            <marker date="1461912000000" expanded="true" signature="294:407" placeholder="{...}" />
-            <marker date="1461912000000" expanded="true" signature="419:506" placeholder="{...}" />
-            <marker date="1461912000000" expanded="true" signature="519:654" placeholder="{...}" />
-            <marker date="1461912000000" expanded="true" signature="544:619" placeholder="{...}" />
-            <marker date="1461912000000" expanded="true" signature="626:652" placeholder="{...}" />
-            <marker date="1461912000000" expanded="true" signature="667:1744" placeholder="{...}" />
-            <marker date="1461912000000" expanded="true" signature="749:786" placeholder="{...}" />
-            <marker date="1461912000000" expanded="true" signature="796:964" placeholder="{...}" />
-            <marker date="1461912000000" expanded="true" signature="975:1232" placeholder="{...}" />
-            <marker date="1461912000000" expanded="true" signature="1258:1465" placeholder="{...}" />
-            <marker date="1461912000000" expanded="true" signature="1486:1742" placeholder="{...}" />
-            <marker date="1461912000000" expanded="true" signature="1630:1656" placeholder="{...}" />
-            <marker date="1461912000000" expanded="true" signature="1694:1736" placeholder="{...}" />
-            <marker date="1461912000000" expanded="true" signature="1755:1780" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/app/rooms/room-details/room-details.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -4837,26 +4782,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/rooms/image-upload/image-upload.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16083333">
-          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
-          <folding>
-            <marker date="1461999157000" expanded="true" signature="0:120" placeholder="/** Created by Benzo Media. ...*/" />
-            <marker date="1461999157000" expanded="true" signature="186:350" placeholder="{...}" />
-            <marker date="1461999157000" expanded="true" signature="199:348" placeholder="{&quot;restrict&quot;: 'E'...}" />
-            <marker date="1461999157000" expanded="true" signature="436:1671" placeholder="{...}" />
-            <marker date="1461999157000" expanded="true" signature="547:1667" placeholder="{...}" />
-            <marker date="1461999157000" expanded="true" signature="737:1661" placeholder="{...}" />
-            <marker date="1461999157000" expanded="true" signature="779:870" placeholder="{&quot;url&quot;: 'api/image-upload'...}" />
-            <marker date="1461999157000" expanded="true" signature="923:1352" placeholder="{...}" />
-            <marker date="1461999157000" expanded="true" signature="1268:1336" placeholder="{...}" />
-            <marker date="1461999157000" expanded="true" signature="1374:1508" placeholder="{...}" />
-            <marker date="1461999157000" expanded="true" signature="1525:1649" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/styles/scss/pages/_new-room.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.34833333">
@@ -4926,24 +4851,6 @@
             <marker date="1462000080000" expanded="true" signature="181:410" placeholder="{...}" />
             <marker date="1462000080000" expanded="true" signature="194:408" placeholder="{&quot;restrict&quot;: 'E'...}" />
             <marker date="1462000080000" expanded="true" signature="358:402" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/rooms/search-bar/search-bar.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="26" selection-start-line="0" selection-start-column="26" selection-end-line="0" selection-end-column="26" />
-          <folding>
-            <marker date="1462000080000" expanded="true" signature="27:1764" placeholder="..." />
-            <marker date="1462000080000" expanded="true" signature="64:1757" placeholder="..." />
-            <marker date="1462000080000" expanded="true" signature="94:427" placeholder="..." />
-            <marker date="1462000080000" expanded="true" signature="148:416" placeholder="..." />
-            <marker date="1462000080000" expanded="true" signature="456:1246" placeholder="..." />
-            <marker date="1462000080000" expanded="true" signature="510:1235" placeholder="..." />
-            <marker date="1462000080000" expanded="true" signature="1290:1394" placeholder="..." />
-            <marker date="1462000080000" expanded="true" signature="1423:1704" placeholder="..." />
-            <marker date="1462000080000" expanded="true" signature="1474:1693" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -5106,72 +5013,161 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/rooms/new-room/new-room.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.06583333">
-          <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="33" selection-end-column="36" />
-          <folding>
-            <marker date="1461999376000" expanded="true" signature="0:120" placeholder="/** Created by Benzo Media. ...*/" />
-            <marker date="1461999376000" expanded="true" signature="200:2053" placeholder="{...}" />
-            <marker date="1461999376000" expanded="true" signature="213:2051" placeholder="{&quot;restrict&quot;: 'E'...}" />
-            <marker date="1461999376000" expanded="true" signature="400:2045" placeholder="{...}" />
-            <marker date="1461999376000" expanded="true" signature="460:1002" placeholder="{&quot;name&quot;: &quot;Great Room&quot;...}" />
-            <marker date="1461999376000" expanded="true" signature="1049:1480" placeholder="{...}" />
-            <marker date="1461999376000" expanded="true" signature="1285:1388" placeholder="{...}" />
-            <marker date="1461999376000" expanded="true" signature="1405:1433" placeholder="{...}" />
-            <marker date="1461999376000" expanded="true" signature="1637:1699" placeholder="{...}" />
-            <marker date="1461999376000" expanded="true" signature="1968:2033" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/app/rooms/room-list/room-list.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3325">
-          <caret line="21" column="45" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
+        <state vertical-scroll-proportion="0.20583333">
+          <caret line="13" column="32" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
           <folding>
-            <marker date="1462000426000" expanded="true" signature="0:120" placeholder="/** Created by Benzo Media. ...*/" />
-            <marker date="1462000426000" expanded="true" signature="179:671" placeholder="{...}" />
-            <marker date="1462000426000" expanded="true" signature="192:669" placeholder="{&quot;restrict&quot;: 'E'...}" />
-            <marker date="1462000426000" expanded="true" signature="373:663" placeholder="{...}" />
-            <marker date="1462000426000" expanded="true" signature="511:576" placeholder="{...}" />
-            <marker date="1462000426000" expanded="true" signature="593:650" placeholder="{...}" />
+            <marker date="1462003474000" expanded="true" signature="0:120" placeholder="/** Created by Benzo Media. ...*/" />
+            <marker date="1462003474000" expanded="true" signature="179:676" placeholder="{...}" />
+            <marker date="1462003474000" expanded="true" signature="192:674" placeholder="{&quot;restrict&quot;: 'E'...}" />
+            <marker date="1462003474000" expanded="true" signature="378:668" placeholder="{...}" />
+            <marker date="1462003474000" expanded="true" signature="516:581" placeholder="{...}" />
+            <marker date="1462003474000" expanded="true" signature="598:655" placeholder="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/styles/scss/pages/_room-list.scss">
+    <entry file="file://$PROJECT_DIR$/public/app/rooms/search-bar/search-bar.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0475">
-          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="38" selection-start-line="0" selection-start-column="38" selection-end-line="0" selection-end-column="38" />
           <folding>
-            <marker date="1462002281000" expanded="true" signature="24:49" placeholder="{...}" />
+            <marker date="1462004816000" expanded="true" signature="39:1776" placeholder="..." />
+            <marker date="1462004816000" expanded="true" signature="76:1769" placeholder="..." />
+            <marker date="1462004816000" expanded="true" signature="106:439" placeholder="..." />
+            <marker date="1462004816000" expanded="true" signature="160:428" placeholder="..." />
+            <marker date="1462004816000" expanded="true" signature="468:1258" placeholder="..." />
+            <marker date="1462004816000" expanded="true" signature="522:1247" placeholder="..." />
+            <marker date="1462004816000" expanded="true" signature="1302:1406" placeholder="..." />
+            <marker date="1462004816000" expanded="true" signature="1435:1716" placeholder="..." />
+            <marker date="1462004816000" expanded="true" signature="1486:1705" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/rooms/room-list/room-list.component.html">
+    <entry file="file://$PROJECT_DIR$/public/styles/scss/pages/_home.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.031666666">
-          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.49083334">
+          <caret line="56" column="33" selection-start-line="56" selection-start-column="33" selection-end-line="56" selection-end-column="33" />
           <folding>
-            <marker date="1462002358000" expanded="true" signature="34:613" placeholder="..." />
-            <marker date="1462002358000" expanded="true" signature="44:89" placeholder="..." />
-            <marker date="1462002358000" expanded="true" signature="117:587" placeholder="..." />
-            <marker date="1462002358000" expanded="true" signature="144:576" placeholder="..." />
-            <marker date="1462002358000" expanded="true" signature="262:559" placeholder="..." />
-            <marker date="1462002358000" expanded="true" signature="373:540" placeholder="..." />
+            <marker date="1462004981000" expanded="true" signature="240:280" placeholder="{...}" />
+            <marker date="1462004981000" expanded="true" signature="294:407" placeholder="{...}" />
+            <marker date="1462004981000" expanded="true" signature="419:506" placeholder="{...}" />
+            <marker date="1462004981000" expanded="true" signature="519:679" placeholder="{...}" />
+            <marker date="1462004981000" expanded="true" signature="569:644" placeholder="{...}" />
+            <marker date="1462004981000" expanded="true" signature="651:677" placeholder="{...}" />
+            <marker date="1462004981000" expanded="true" signature="692:1816" placeholder="{...}" />
+            <marker date="1462004981000" expanded="true" signature="749:829" placeholder="{...}" />
+            <marker date="1462004981000" expanded="true" signature="864:983" placeholder="{...}" />
+            <marker date="1462004981000" expanded="true" signature="902:979" placeholder="{...}" />
+            <marker date="1462004981000" expanded="true" signature="993:1071" placeholder="{...}" />
+            <marker date="1462004981000" expanded="true" signature="1082:1249" placeholder="{...}" />
+            <marker date="1462004981000" expanded="true" signature="1275:1540" placeholder="{...}" />
+            <marker date="1462004981000" expanded="true" signature="1476:1536" placeholder="{...}" />
+            <marker date="1462004981000" expanded="true" signature="1561:1814" placeholder="{...}" />
+            <marker date="1462004981000" expanded="true" signature="1682:1708" placeholder="{...}" />
+            <marker date="1462004981000" expanded="true" signature="1746:1808" placeholder="{...}" />
+            <marker date="1462004981000" expanded="true" signature="1827:1852" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/rooms/image-upload/image-upload.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16083333">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <marker date="1461999157000" expanded="true" signature="0:120" placeholder="/** Created by Benzo Media. ...*/" />
+            <marker date="1461999157000" expanded="true" signature="186:350" placeholder="{...}" />
+            <marker date="1461999157000" expanded="true" signature="199:348" placeholder="{&quot;restrict&quot;: 'E'...}" />
+            <marker date="1461999157000" expanded="true" signature="436:1671" placeholder="{...}" />
+            <marker date="1461999157000" expanded="true" signature="547:1667" placeholder="{...}" />
+            <marker date="1461999157000" expanded="true" signature="737:1661" placeholder="{...}" />
+            <marker date="1461999157000" expanded="true" signature="779:870" placeholder="{&quot;url&quot;: 'api/image-upload'...}" />
+            <marker date="1461999157000" expanded="true" signature="923:1352" placeholder="{...}" />
+            <marker date="1461999157000" expanded="true" signature="1268:1336" placeholder="{...}" />
+            <marker date="1461999157000" expanded="true" signature="1374:1508" placeholder="{...}" />
+            <marker date="1461999157000" expanded="true" signature="1525:1649" placeholder="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/api/image-upload.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5225">
-          <caret line="39" column="17" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.5541667">
+          <caret line="41" column="21" selection-start-line="41" selection-start-column="21" selection-end-line="41" selection-end-column="21" />
           <folding>
-            <element signature="e#0#120#0" expanded="false" />
+            <marker date="1462006238000" expanded="false" signature="0:120" placeholder="/** Created by Benzo Media. ...*/" />
+            <marker date="1462006238000" expanded="true" signature="358:464" placeholder="{&quot;cloud_name&quot;: &quot;benzo&quot;...}" />
+            <marker date="1462006238000" expanded="true" signature="534:1128" placeholder="{...}" />
+            <marker date="1462006238000" expanded="true" signature="897:1051" placeholder="{...}" />
+            <marker date="1462006238000" expanded="true" signature="1052:1122" placeholder="{&quot;width&quot;: 540...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/styles/scss/abstracts/_mixins.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8258333">
+          <caret line="63" column="64" selection-start-line="63" selection-start-column="11" selection-end-line="63" selection-end-column="64" />
+          <folding>
+            <marker date="1462007089000" expanded="true" signature="472:638" placeholder="{...}" />
+            <marker date="1462007089000" expanded="true" signature="486:561" placeholder="{...}" />
+            <marker date="1462007089000" expanded="true" signature="534:557" placeholder="{...}" />
+            <marker date="1462007089000" expanded="true" signature="568:636" placeholder="{...}" />
+            <marker date="1462007089000" expanded="true" signature="609:632" placeholder="{...}" />
+            <marker date="1462007089000" expanded="true" signature="781:820" placeholder="{...}" />
+            <marker date="1462007089000" expanded="true" signature="799:818" placeholder="{...}" />
+            <marker date="1462007089000" expanded="true" signature="979:1390" placeholder="{...}" />
+            <marker date="1462007089000" expanded="true" signature="1049:1257" placeholder="{...}" />
+            <marker date="1462007089000" expanded="true" signature="1230:1253" placeholder="{...}" />
+            <marker date="1462007089000" expanded="true" signature="1264:1388" placeholder="{...}" />
+            <marker date="1462007089000" expanded="true" signature="1708:1794" placeholder="{...}" />
+            <marker date="1462007089000" expanded="true" signature="1739:1792" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/rooms/room-list/room-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.11083333">
+          <caret line="7" column="75" selection-start-line="7" selection-start-column="75" selection-end-line="7" selection-end-column="75" />
+          <folding>
+            <marker date="1462007641000" expanded="true" signature="34:780" placeholder="..." />
+            <marker date="1462007641000" expanded="true" signature="63:754" placeholder="..." />
+            <marker date="1462007641000" expanded="true" signature="126:743" placeholder="..." />
+            <marker date="1462007641000" expanded="true" signature="204:726" placeholder="..." />
+            <marker date="1462007641000" expanded="true" signature="292:707" placeholder="..." />
+            <marker date="1462007641000" expanded="true" signature="410:684" placeholder="..." />
+            <marker date="1462007641000" expanded="true" signature="458:657" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/styles/scss/pages/_room-list.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1425">
+          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+          <folding>
+            <marker date="1462007821000" expanded="true" signature="24:49" placeholder="{...}" />
+            <marker date="1462007821000" expanded="true" signature="57:195" placeholder="{...}" />
+            <marker date="1462007821000" expanded="true" signature="214:302" placeholder="{...}" />
+            <marker date="1462007821000" expanded="true" signature="315:348" placeholder="{...}" />
+            <marker date="1462007821000" expanded="true" signature="361:674" placeholder="{...}" />
+            <marker date="1462007821000" expanded="true" signature="459:528" placeholder="{...}" />
+            <marker date="1462007821000" expanded="true" signature="535:604" placeholder="{...}" />
+            <marker date="1462007821000" expanded="true" signature="610:671" placeholder="{...}" />
+            <marker date="1462007821000" expanded="true" signature="686:811" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/rooms/new-room/new-room.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.335">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

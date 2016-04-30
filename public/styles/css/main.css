@@ -5999,6 +5999,49 @@ label {
 .app-content.room-list {
   padding-top: 150px; }
 
+.card {
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  overflow: hidden;
+  margin-bottom: 30px; }
+
+.room-list .grid {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  display: inline-block;
+  width: 100%; }
+
+.card > img {
+  border-radius: 3px 3px 0 0; }
+
+.room-info {
+  padding: 28px 10px 20px;
+  -webkit-transform: rotate(7deg);
+  -ms-transform: rotate(7deg);
+  -moz-transform: rotate(7deg);
+  -o-transform: rotate(7deg); }
+  .room-info h2 {
+    font-size: 15px;
+    margin-top: 0;
+    margin-bottom: 5px; }
+  .room-info h3 {
+    font-size: 13px;
+    margin-top: 0;
+    margin-bottom: 5px; }
+  .room-info p {
+    font-size: 12px;
+    color: #8c8c8c;
+    margin: 0; }
+
+.diagonal {
+  background: #FFFFFF;
+  -webkit-transform: rotate(-7deg);
+  -ms-transform: rotate(-7deg);
+  -moz-transform: rotate(-7deg);
+  -o-transform: rotate(-7deg);
+  width: 105%;
+  margin-top: -28px; }
+
 .app-content.edit-slots {
   background-image: url("../../../images/calendar.jpg");
   background-size: cover;
@@ -6070,6 +6113,7 @@ label {
   height: 100vh; }
 
 .hero-text {
+  padding-bottom: 20px;
   color: white; }
   .hero-text h1 {
     font-size: 56px;
@@ -6079,16 +6123,19 @@ label {
     font-size: 30px; }
 
 .hero-form {
-  padding-top: 50px;
-  padding-bottom: 200px; }
-  .hero-form .form-group:first-child select {
-    border-radius: 3px 0 0 3px; }
+  border-radius: 3px; }
+  @media (min-width: 768px) {
+    .hero-form {
+      display: inline-block;
+      border: 1px solid #000;
+      background-color: white; } }
+  @media (min-width: 768px) {
+    .hero-form .form-group:first-child select {
+      border-right: 1px solid #ccc;
+      border-radius: 3px 0 0 3px; } }
   .hero-form input {
     border-radius: 0;
-    margin-left: -5px;
     border: 0;
-    border-left: 1px solid #ccc;
-    border-right: 1px solid #ccc;
     color: black;
     height: 50px; }
   .hero-form select {
@@ -6098,22 +6145,21 @@ label {
     border-radius: 0;
     outline: none;
     background-color: white;
-    margin-left: -4px;
-    border-left: 1px solid #ccc;
-    border-right: 1px solid #ccc;
     height: 50px; }
   .hero-form button[type="submit"] {
     height: 34px;
     background-color: #35e4bd;
     border: 1px solid #35e4bd;
     padding: 0 11px;
-    margin-left: -5px;
     vertical-align: bottom;
-    border-radius: 0 3px 3px 0;
+    width: 100%;
     height: 50px; }
+    @media (min-width: 768px) {
+      .hero-form button[type="submit"] {
+        border-radius: 0 3px 3px 0;
+        width: auto; } }
   .hero-form .datepicker-div {
     border-radius: 0;
-    margin-left: -5px;
     height: 50px;
     border-left: 1px solid #ccc;
     border-right: 1px solid #ccc; }
@@ -6121,7 +6167,8 @@ label {
       border: 0; }
     .hero-form .datepicker-div .md-datepicker-triangle-button {
       right: 9px;
-      top: 12px; }
+      top: 16px;
+      height: 36px; }
 
 div.date {
   margin-right: -6px; }

@@ -55,3 +55,15 @@
          + 'Please make sure it is defined in `$breakpoints` map.';
   }
 }
+
+/// Mixin to prefix a property
+/// @author Hugo Giraudel
+/// @param {String} $property - Property name
+/// @param {*} $value - Property value
+/// @param {List} $prefixes (()) - List of prefixes to print
+/// usage: @include prefix(transform, rotate(45deg), webkit ms);
+@mixin prefix($property, $value, $prefixes: ()) {
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + $property}: $value;
+  }
+}

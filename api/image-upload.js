@@ -38,6 +38,8 @@ router.post('/', upload.single('file'), function (req, res, next) {
         fs.unlink(path);
     },{
         width: 540,
+        height: 400,
+        crop: "scale"
     });
 
 

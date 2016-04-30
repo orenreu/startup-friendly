@@ -11,7 +11,7 @@ angular.module('app').directive('roomList', function () {
     return {
         restrict: 'E',
         templateUrl: 'app/rooms/room-list/room-list.component.html',
-        controllerAs: 'ctrl',
+        controllerAs: 'roomsCtrl',
         controller: function ($scope, $rootScope, $http) {
             var ctrl = this;
 
