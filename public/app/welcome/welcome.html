@@ -7,47 +7,7 @@
                     <h3>Schedule a free meeting room</h3>
                 </div>
                 <div class="hero-form-div center-block text-center">
-                    <form class="form-inline hero-form">
-
-                        <div class="form-group">
-                            <select name="location" class="form-control">
-                                <option disabled selected>Where do you want to meet?</option>
-                                <option value="south">South Tel Aviv</option>
-                                <option value="center">Center Tel Aviv</option>
-                                <option value="north">North Tel Aviv</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <select name="location" class="form-control">
-                                <option disabled selected>How many people?</option>
-                                <option value="1">1 Guest</option>
-                                <option value="2">2 Guests</option>
-                                <option value="3">3 Guests</option>
-                                <option value="4">4 Guests</option>
-                                <option value="5">5 Guests</option>
-                                <option value="6">6 Guests</option>
-                                <option value="7">7 Guests</option>
-                                <option value="8">8 Guests</option>
-                                <option value="9">9 Guests</option>
-                                <option value="10">10 Guests</option>
-                                <option value="11">11 Guests</option>
-                                <option value="12">12 Guests</option>
-                                <option value="more">More than 12 guests</option>
-                            </select>
-                        </div>
-                        <div class="form-group datepicker-div">
-                                <md-datepicker  ng-model="ctrl.newSlot.date" md-placeholder="When?"></md-datepicker>
-                        </div>
-                        <div class="form-group">
-                            <select name="hours" class="form-control">
-                                <option disabled selected>For how long?</option>
-                                <option value="1">1 hour</option>
-                                <option value="2">2 hours</option>
-                                <option value="3">3 hours</option>
-                            </select>
-                        </div>
-                        <button type="submit">Go Go Go!</button>
-                    </form>
+                    <search-bar></search-bar>
                 </div><!-- .hero-form-div -->
             </div><!-- .hero-content -->
         </div><!-- .hero-box -->

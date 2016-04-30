@@ -1,9 +1,16 @@
-<div class="app-content">
+<div class="app-content room-list">
+    <div>
+        <search-bar></search-bar>
+    </div>
     <div class="container">
         <div class="grid">
-            <div class="room col-xs-12 col-sm-6 col-md-4 col-lg-3" ng-repeat="room in ctrl.rooms">
-                <h3>{{ room.name }}</h3>
-
+            <div id="{{ room.id }}" class="room col-xs-12 col-sm-6 col-md-4 col-lg-3" ng-repeat="room in ctrl.rooms">
+                <img ng-src="{{ room.image }}" class="img-responsive">
+                <div class="room-info">
+                    <h2>{{ room.name }}</h2>
+                    <h3>{{ room.company }}</h3>
+                    <p> {{ room.description }}</p>
+                </div>
             </div>
 
 

@@ -18,6 +18,7 @@ function saveRoom(req, res) {
         wifi_name: room.wifi_name,
         wifi_pass: room.wifi_pass,
         description: room.description,
+        image: room.image,
         contact_name: room.contact_name,
         email: room.email,
         phone: room.phone,
@@ -33,7 +34,7 @@ router.post('/create', function(req, res) {
 });
 
 
-
+// Get One Room
 function getRoom(id, res) {
     Room.get(id).then( function(result){
         res.send(JSON.stringify(result))
@@ -43,6 +44,24 @@ function getRoom(id, res) {
 router.get('/:roomId', function(req, res) {
     getRoom(req.params.roomId, res)
 });
+
+
+
+
+
+// Get All Rooms
+function getRooms(res) {
+    Room.run().then( function(result){
+        res.send(JSON.stringify(result))
+    }).error(handleError(res));
+}
+
+router.get('/', function(req, res) {
+    getRooms(res)
+});
+
+
+
 
 
 

@@ -8,6 +8,7 @@
 
 angular.module('app', [
     "ngMaterial",
-    'ui.router'
+    'ui.router',
+    'ngFileUpload'
 ])
 

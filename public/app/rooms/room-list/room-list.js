@@ -12,12 +12,17 @@ angular.module('app').directive('roomList', function () {
         restrict: 'E',
         templateUrl: 'app/rooms/room-list/room-list.component.html',
         controllerAs: 'ctrl',
-        controller: function ($scope) {
-
-
+        controller: function ($scope, $rootScope, $http) {
             var ctrl = this;
 
+            ctrl.rooms = [];
 
+            $http.get('api/room').then(
+                function (response) {
+                  ctrl.rooms = response.data;
+                }, function (err) {
+                    console.log(err);
+                });
 
         }
     }

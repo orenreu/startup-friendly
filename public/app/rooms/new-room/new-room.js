@@ -13,7 +13,7 @@ angular.module('app').directive('newRoom', function () {
         restrict: 'E',
         templateUrl: 'app/rooms/new-room/new-room.component.html',
         controllerAs: 'ctrl',
-        controller: function ($http, $state) {
+        controller: function ($scope, $http, $state, $rootScope) {
 
             var ctrl = this;
 
@@ -28,6 +28,7 @@ angular.module('app').directive('newRoom', function () {
                 wifi_name: "Monkey",
                 wifi_pass: "0544322918",
                 description: "What a great room",
+                image: "",
                 contact_name: "Oren Reuveni",
                 email: "orenreu@gmail.com",
                 phone: "054-4322918"
@@ -50,6 +51,23 @@ angular.module('app').directive('newRoom', function () {
 
                 // Clear form
             }
+
+
+
+            //Listen to time change and reBootstrap the app
+            var unbindImageUploaded = $rootScope.$on('imageUploaded', function (event, data) {
+                ctrl.newRoom.image = data.url;
+            });
+
+            //Unbinding from rootScope (see more at:"http://stackoverflow.com/questions/11252780/whats-the-correct-way-to-communicate-between-controllers-in-angularjs")
+            $scope.$on('$destroy', unbindImageUploaded);
+
+
+            ctrl.isImage = function(){
+                return ctrl.newRoom.image !== "";
+            }
+
+
         }
     }
 });

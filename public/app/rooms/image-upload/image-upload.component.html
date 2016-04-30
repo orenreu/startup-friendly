@@ -1,16 +1,12 @@
-<div ng-controller="ImageUploadController as ctrl">
-    <button type="file" ngf-select="ctrl.uploadFiles($file, $invalidFiles)"
-            accept="image/*" ngf-max-height="1000" ngf-max-size="1MB">
-        Select File
-    </button>
-    <br><br>
-    File:
-    <div>{{ctrl.f.name}} {{ctrl.errFile.name}} {{ctrl.errFile.$error}} {{ctrl.errFile.$errorParam}}
-      <span class="progress" ng-show="ctrl.f.progress >= 0">
-          <div style="width:{{ctrl.f.progress}}%"
-               ng-bind="ctrl.f.progress + '%'"></div>
-      </span>
-    </div>
-    Image thumbnail: <img ngf-thumbnail="ctrl.file.path">
-    {{ctrl.errorMsg}}
+<div ng-controller="ImageUploadController" class="upload-image text-center">
+
+        <div class="loading-div text-center" ng-show="uploadingImage">
+            <md-progress-circular class="center-block" md-mode="indeterminate"></md-progress-circular>
+            Uploading image...
+        </div>
+
+    <button class="btn btn-submit" type="file" ngf-select="uploadFiles($file, $invalidFiles)"
+            accept="image/*"  ngf-max-size="5MB">
+        Upload Image</button>
+    {{errorMsg}}
 </div>

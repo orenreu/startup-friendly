@@ -1,12 +1,9 @@
 
-
 .app-content.new-room {
   background-image: url('../../../images/meeting_room_2.jpg');
   background-size: cover;
   padding-top: 150px;
 }
-
-
 
 .black-div {
   background: black;
@@ -21,3 +18,25 @@
   }
 }
 
+.upload-image-div {
+  height: 120px;
+  width: 204px;
+  margin: 5px auto;
+  border: 2px dashed;
+  overflow: hidden;
+
+}
+
+.upload-image-div img {
+  width: 200px;
+  height: auto;
+  margin: auto;
+
+}
+
+.loading-div {
+  position: absolute;
+  top: 27px;
+  left: calc(50% - 62px);
+  z-index: 10;
+}

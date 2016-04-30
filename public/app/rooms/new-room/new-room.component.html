@@ -72,6 +72,12 @@
                         <label for="description_input">Description</label>
                         <textarea class="form-control" rows="3" id="description_input" ng-model="ctrl.newRoom.description"></textarea>
                     </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="upload-image-div">
+                            <img  ng-src="{{ ctrl.newRoom.image }}" ng-show="ctrl.isImage()" >
+                        </div>
+                        <image-upload></image-upload>
+                    </div>
                 </div>
 
                 <div class="divider-white"></div>
@@ -102,7 +108,6 @@
                 </div>
 
             </form>
-            <image-upload></image-upload>
         </div>
     </div><!-- .container -->
 </div><!-- .app-content -->
