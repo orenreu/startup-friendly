@@ -25,7 +25,7 @@ function saveRoom(req, res) {
         phone: room.phone,
         slots: room.slots
     }).then(function(result) {
-        res.send(JSON.stringify(result));
+        res.status(200).send(JSON.stringify(result))
     }).error(handleError(res));
 };
 
@@ -38,7 +38,7 @@ router.post('/create', function(req, res) {
 // Get One Room
 function getRoom(id, res) {
     Room.get(id).then( function(result){
-        res.send(JSON.stringify(result))
+        res.status(200).send(JSON.stringify(result))
     }).error(handleError(res));
 }
 
@@ -53,7 +53,7 @@ router.get('/:roomId', function(req, res) {
 // Get All Rooms
 function getRooms(res) {
     Room.run().then( function(result){
-        res.send(JSON.stringify(result))
+        res.status(200).send(JSON.stringify(result))
     }).error(handleError(res));
 }
 
@@ -73,7 +73,7 @@ function updateSlots(req, res) {
     Room.get(room.id).update({
         slots: room.slots
     }).run().then(function(room) {
-        res.send(JSON.stringify(room));
+        res.status(200).send(JSON.stringify(room))
     }).error(handleError(res));
 }
 
@@ -90,7 +90,7 @@ router.post('/slots', function(req, res) {
 
 function handleError(res) {
     return function(error) {
-        return res.send(500, {error: error.message});
+        res.status(500).send({error: error.message})
     }
 }
 

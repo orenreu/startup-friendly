@@ -32,7 +32,7 @@ router.post('/', upload.single('file'), function (req, res, next) {
     cloudinary.uploader.upload(path, function(result) {
         // Send uploaded image url back
         var url = result.url
-        res.send(url);
+        res.status(200).send(url);
 
         // Delete local copy
         fs.unlink(path);
@@ -62,7 +62,7 @@ router.post('/logo', upload.single('file'), function (req, res, next) {
     cloudinary.uploader.upload(path, function(result) {
         // Send uploaded image url back
         var url = result.url
-        res.send(url);
+        res.status(200).send(url);
 
         // Delete local copy
         fs.unlink(path);

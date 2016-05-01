@@ -6005,6 +6005,18 @@ label {
   align-items: center;
   justify-content: center; }
 
+.calendar {
+  padding-top: 30px;
+  padding-bottom: 30px; }
+  .calendar table {
+    width: 100%;
+    border-radius: 4px;
+    text-align: center; }
+    .calendar table th {
+      text-align: center; }
+    .calendar table td:focus {
+      outline: none; }
+
 .app-content.room-details {
   padding-top: 150px; }
 
