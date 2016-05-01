@@ -5834,7 +5834,7 @@ body {
  * Basic styles for links
  */
 a {
-  color: #e50050;
+  color: #222222;
   text-decoration: none; }
   a:hover, a:active, a:focus {
     color: #222222;
@@ -5924,7 +5924,7 @@ nav.navbar {
 
 footer.site-footer {
   height: 100px;
-  background-color: black;
+  background-color: #303B4B;
   position: absolute;
   width: 100%;
   left: 0; }
@@ -6004,6 +6004,9 @@ label {
   display: flex;
   align-items: center;
   justify-content: center; }
+
+.app-content.room-details {
+  padding-top: 150px; }
 
 .app-content.room-list {
   padding-top: 150px; }

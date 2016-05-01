@@ -31,6 +31,7 @@ function serveIndex(req, res) {
 }
 app.get('/room', serveIndex)
 app.get('/room/create', serveIndex)
+app.get('/room/:roomId', serveIndex)
 app.get('/slots/:roomId', serveIndex)
 
 

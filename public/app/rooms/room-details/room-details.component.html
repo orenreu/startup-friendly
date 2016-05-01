@@ -1,5 +1,29 @@
-<div class="app-content">
+<div class="app-content room-details">
     <div class="container">
+
+        <div class="white-div">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6">
+                    <img ng-src="{{ ctrl.room.image }}" class="img-responsive">
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <img ng-src="{{ ctrl.room.logo }}" class="img-responsive company-logo">
+                    <h1>{{ ctrl.room.name }}</h1>
+                    <p>{{ ctrl.room.company }}</p>
+                    <p>{{ ctrl.room.address }}, Floor {{ ctrl.room.floor }}, Entrance {{ ctrl.room.entrance }}</p>
+                    <p>{{ ctrl.room.city_part }} Tel Aviv</p>
+                    <p>{{ ctrl.room.guests }}</p>
+                    <p>{{ ctrl.room.wifi_name }}</p>
+                    <p>{{ ctrl.room.wifi_pass }}</p>
+                    <p>{{ ctrl.room.description }}</p>
+                    <p>{{ ctrl.room.contact_name }}</p>
+                    <p>{{ ctrl.room.email }}</p>
+                    <p>{{ ctrl.room.phone }}</p>
+                </div>
+            </div>
+        </div>
+
+
 
     </div><!-- .container -->
 </div><!-- .app-content -->

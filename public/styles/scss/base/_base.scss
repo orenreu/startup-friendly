@@ -29,7 +29,7 @@ body {
  * Basic styles for links
  */
 a {
-  color: $brand-color;
+  color: $text-color;
   text-decoration: none;
 
   @include on-event {
