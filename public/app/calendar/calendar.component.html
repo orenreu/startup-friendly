@@ -1,48 +1,50 @@
-<div class="calendar">
+<div class="row">
+<div class="calendar col-xs-12 col-sm-8">
 
-    <md-button ng-click="calCtrl.subtractWeek()"><i class="fa fa-angle-left"></i> Previous</md-button>
+    <md-button class="btn-calendar" ng-click="calCtrl.subtractWeek()"><i class="fa fa-angle-left"></i> Previous</md-button>
     <span>{{month.format("MMMM, YYYY")}}</span>
-    <md-button ng-click="calCtrl.addWeek()">Next <i class="fa fa-angle-right"></i></md-button>
-    <table class="table table-bordered table-striped">
+    <md-button class="btn-calendar" ng-click="calCtrl.addWeek()">Next <i class="fa fa-angle-right"></i></md-button>
+    <table class="table table-bordered table-striped table-responsive">
+        <md-button class="btn-calendar pull-right" ng-click="calCtrl.setToday()">Today</md-button>
         <thead>
         <tr>
-            <th class="day">{{ calCtrl.week[0] | date:'EEE d/M' }}</th>
-            <th class="day">{{ calCtrl.week[1] | date:'EEE d/M' }}</th>
-            <th class="day">{{ calCtrl.week[2] | date:'EEE d/M' }}</th>
-            <th class="day">{{ calCtrl.week[3] | date:'EEE d/M' }}</th>
-            <th class="day">{{ calCtrl.week[4] | date:'EEE d/M' }}</th>
-            <th class="day">{{ calCtrl.week[5] | date:'EEE d/M' }}</th>
-            <th class="day">{{ calCtrl.week[6] | date:'EEE d/M' }}</th>
+            <th class="day" ng-class="{today : calCtrl.isToday(0)}">{{ calCtrl.week[0] | date:'EEE d/M' }}</th>
+            <th class="day" ng-class="{today : calCtrl.isToday(1)}">{{ calCtrl.week[1] | date:'EEE d/M' }}</th>
+            <th class="day" ng-class="{today : calCtrl.isToday(2)}">{{ calCtrl.week[2] | date:'EEE d/M' }}</th>
+            <th class="day" ng-class="{today : calCtrl.isToday(3)}">{{ calCtrl.week[3] | date:'EEE d/M' }}</th>
+            <th class="day" ng-class="{today : calCtrl.isToday(4)}">{{ calCtrl.week[4] | date:'EEE d/M' }}</th>
+            <th class="day" ng-class="{today : calCtrl.isToday(5)}">{{ calCtrl.week[5] | date:'EEE d/M' }}</th>
+            <th class="day" ng-class="{today : calCtrl.isToday(6)}">{{ calCtrl.week[6] | date:'EEE d/M' }}</th>
         </tr>
         </thead>
         <tbody>
             <tr>
                 <td id="0-8" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('0-8'), danger : calCtrl.isBooked('0-8'), success : calCtrl.isSelected('0-8')}">
+                    ng-class="{info : calCtrl.slots[0][8].isAvailable, danger : calCtrl.slots[0][8].isBooked, success : calCtrl.slots[0][8].isSelected}">
                     08:00
                 </td>
                 <td id="1-8" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('1-8'), danger : calCtrl.isBooked('1-8'), success : calCtrl.isSelected('1-8')}">
+                    ng-class="{info : calCtrl.slots[1][8].isAvailable, danger : calCtrl.slots[1][8].isBooked, success : calCtrl.slots[1][8].isSelected}">
                     08:00
                 </td>
                 <td id="2-8" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('2-8'), danger : calCtrl.isBooked('2-8'), success : calCtrl.isSelected('2-8')}">
+                    ng-class="{info : calCtrl.slots[2][8].isAvailable, danger : calCtrl.slots[2][8].isBooked, success : calCtrl.slots[2][8].isSelected}">
                     08:00
                 </td>
                 <td id="3-8" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('3-8'), danger : calCtrl.isBooked('3-8'), success : calCtrl.isSelected('3-8')}">
+                    ng-class="{info : calCtrl.slots[3][8].isAvailable, danger : calCtrl.slots[3][8].isBooked, success : calCtrl.slots[3][8].isSelected}">
                     08:00
                 </td>
                 <td id="4-8" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('4-8'), danger : calCtrl.isBooked('4-8'), success : calCtrl.isSelected('4-8')}">
+                    ng-class="{info : calCtrl.slots[4][8].isAvailable, danger : calCtrl.slots[4][8].isBooked, success : calCtrl.slots[4][8].isSelected}">
                     08:00
                 </td>
                 <td id="5-8" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('5-8'), danger : calCtrl.isBooked('5-8'), success : calCtrl.isSelected('5-8')}">
+                    ng-class="{info : calCtrl.slots[5][8].isAvailable, danger : calCtrl.slots[5][8].isBooked, success : calCtrl.slots[5][8].isSelected}">
                     08:00
                 </td>
                 <td id="6-8" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('6-8'), danger : calCtrl.isBooked('6-8'), success : calCtrl.isSelected('6-8')}">
+                    ng-class="{info : calCtrl.slots[6][8].isAvailable, danger : calCtrl.slots[6][8].isBooked, success : calCtrl.slots[6][8].isSelected}">
                     08:00
                 </td>
             </tr>
@@ -50,377 +52,389 @@
 
             <tr>
                 <td id="0-9" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('0-9'), danger : calCtrl.isBooked('0-9'), success : calCtrl.isSelected('0-9')}">
+                    ng-class="{info : calCtrl.slots[0][9].isAvailable, danger : calCtrl.slots[0][9].isBooked, success : calCtrl.slots[0][9].isSelected}">
                     09:00
                 </td>
                 <td id="1-9" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('1-9'), danger : calCtrl.isBooked('1-9'), success : calCtrl.isSelected('1-9')}">
+                    ng-class="{info : calCtrl.slots[1][9].isAvailable, danger : calCtrl.slots[1][9].isBooked, success : calCtrl.slots[1][9].isSelected}">
                     09:00
                 </td>
                 <td id="2-9" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('2-9'), danger : calCtrl.isBooked('2-9'), success : calCtrl.isSelected('2-9')}">
+                    ng-class="{info : calCtrl.slots[2][9].isAvailable, danger : calCtrl.slots[2][9].isBooked, success : calCtrl.slots[2][9].isSelected}">
                     09:00
                 </td>
                 <td id="3-9" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('3-9'), danger : calCtrl.isBooked('3-9'), success : calCtrl.isSelected('3-9')}">
+                    ng-class="{info : calCtrl.slots[3][9].isAvailable, danger : calCtrl.slots[3][9].isBooked, success : calCtrl.slots[3][9].isSelected}">
                     09:00
                 </td>
                 <td id="4-9" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('4-9'), danger : calCtrl.isBooked('4-9'), success : calCtrl.isSelected('4-9')}">
+                    ng-class="{info : calCtrl.slots[4][9].isAvailable, danger : calCtrl.slots[4][9].isBooked, success : calCtrl.slots[4][9].isSelected}">
                     09:00
                 </td>
                 <td id="5-9" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('5-9'), danger : calCtrl.isBooked('5-9'), success : calCtrl.isSelected('5-9')}">
+                    ng-class="{info : calCtrl.slots[5][9].isAvailable, danger : calCtrl.slots[5][9].isBooked, success : calCtrl.slots[5][9].isSelected}">
                     09:00
                 </td>
                 <td id="6-9" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('6-9'), danger : calCtrl.isBooked('6-9'), success : calCtrl.isSelected('6-9')}">
+                    ng-class="{info : calCtrl.slots[6][9].isAvailable, danger : calCtrl.slots[6][9].isBooked, success : calCtrl.slots[6][9].isSelected}">
                     09:00
                 </td>
             </tr>
 
             <tr>
                 <td id="0-10" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('0-10'), danger : calCtrl.isBooked('0-10'), success : calCtrl.isSelected('0-10')}">
+                    ng-class="{info : calCtrl.slots[0][10].isAvailable, danger : calCtrl.slots[0][10].isBooked, success : calCtrl.slots[0][10].isSelected}">
                     10:00
                 </td>
                 <td id="1-10" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('1-10'), danger : calCtrl.isBooked('1-10'), success : calCtrl.isSelected('1-10')}">
+                    ng-class="{info : calCtrl.slots[1][10].isAvailable, danger : calCtrl.slots[1][10].isBooked, success : calCtrl.slots[1][10].isSelected}">
                     10:00
                 </td>
                 <td id="2-10" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('2-10'), danger : calCtrl.isBooked('2-10'), success : calCtrl.isSelected('2-10')}">
+                    ng-class="{info : calCtrl.slots[2][10].isAvailable, danger : calCtrl.slots[2][10].isBooked, success : calCtrl.slots[2][10].isSelected}">
                     10:00
                 </td>
                 <td id="3-10" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('3-10'), danger : calCtrl.isBooked('3-10'), success : calCtrl.isSelected('3-10')}">
+                    ng-class="{info : calCtrl.slots[3][10].isAvailable, danger : calCtrl.slots[3][10].isBooked, success : calCtrl.slots[3][10].isSelected}">
                     10:00
                 </td>
                 <td id="4-10" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('4-10'), danger : calCtrl.isBooked('4-10'), success : calCtrl.isSelected('4-10')}">
+                    ng-class="{info : calCtrl.slots[4][10].isAvailable, danger : calCtrl.slots[4][10].isBooked, success : calCtrl.slots[4][10].isSelected}">
                     10:00
                 </td>
                 <td id="5-10" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('5-10'), danger : calCtrl.isBooked('5-10'), success : calCtrl.isSelected('5-10')}">
+                    ng-class="{info : calCtrl.slots[5][10].isAvailable, danger : calCtrl.slots[5][10].isBooked, success : calCtrl.slots[5][10].isSelected}">
                     10:00
                 </td>
                 <td id="6-10" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('6-10'), danger : calCtrl.isBooked('6-10'), success : calCtrl.isSelected('6-10')}">
+                    ng-class="{info : calCtrl.slots[6][10].isAvailable, danger : calCtrl.slots[6][10].isBooked, success : calCtrl.slots[6][10].isSelected}">
                     10:00
                 </td>
             </tr>
 
             <tr>
                 <td id="0-11" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('0-11'), danger : calCtrl.isBooked('0-11'), success : calCtrl.isSelected('0-11')}">
+                    ng-class="{info : calCtrl.slots[0][11].isAvailable, danger : calCtrl.slots[0][11].isBooked, success : calCtrl.slots[0][11].isSelected}">
                     11:00
                 </td>
                 <td id="1-11" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('1-11'), danger : calCtrl.isBooked('1-11'), success : calCtrl.isSelected('1-11')}">
+                    ng-class="{info : calCtrl.slots[1][11].isAvailable, danger : calCtrl.slots[1][11].isBooked, success : calCtrl.slots[1][11].isSelected}">
                     11:00
                 </td>
                 <td id="2-11" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('2-11'), danger : calCtrl.isBooked('2-11'), success : calCtrl.isSelected('2-11')}">
+                    ng-class="{info : calCtrl.slots[2][11].isAvailable, danger : calCtrl.slots[2][11].isBooked, success : calCtrl.slots[2][11].isSelected}">
                     11:00
                 </td>
                 <td id="3-11" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('3-11'), danger : calCtrl.isBooked('3-11'), success : calCtrl.isSelected('3-11')}">
+                    ng-class="{info : calCtrl.slots[3][11].isAvailable, danger : calCtrl.slots[3][11].isBooked, success : calCtrl.slots[3][11].isSelected}">
                     11:00
                 </td>
                 <td id="4-11" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('4-11'), danger : calCtrl.isBooked('4-11'), success : calCtrl.isSelected('4-11')}">
+                    ng-class="{info : calCtrl.slots[4][11].isAvailable, danger : calCtrl.slots[4][11].isBooked, success : calCtrl.slots[4][11].isSelected}">
                     11:00
                 </td>
                 <td id="5-11" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('5-11'), danger : calCtrl.isBooked('5-11'), success : calCtrl.isSelected('5-11')}">
+                    ng-class="{info : calCtrl.slots[5][11].isAvailable, danger : calCtrl.slots[5][11].isBooked, success : calCtrl.slots[5][11].isSelected}">
                     11:00
                 </td>
                 <td id="6-11" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('6-11'), danger : calCtrl.isBooked('6-11'), success : calCtrl.isSelected('6-11')}">
+                    ng-class="{info : calCtrl.slots[6][11].isAvailable, danger : calCtrl.slots[6][11].isBooked, success : calCtrl.slots[6][11].isSelected}">
                     11:00
                 </td>
             </tr>
 
+
             <tr>
                 <td id="0-12" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('0-12'), danger : calCtrl.isBooked('0-12'), success : calCtrl.isSelected('0-12')}">
+                    ng-class="{info : calCtrl.slots[0][12].isAvailable, danger : calCtrl.slots[0][12].isBooked, success : calCtrl.slots[0][12].isSelected}">
                     12:00
                 </td>
                 <td id="1-12" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('1-12'), danger : calCtrl.isBooked('1-12'), success : calCtrl.isSelected('1-12')}">
+                    ng-class="{info : calCtrl.slots[1][12].isAvailable, danger : calCtrl.slots[1][12].isBooked, success : calCtrl.slots[1][12].isSelected}">
                     12:00
                 </td>
                 <td id="2-12" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('2-12'), danger : calCtrl.isBooked('2-12'), success : calCtrl.isSelected('2-12')}">
+                    ng-class="{info : calCtrl.slots[2][12].isAvailable, danger : calCtrl.slots[2][12].isBooked, success : calCtrl.slots[2][12].isSelected}">
                     12:00
                 </td>
                 <td id="3-12" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('3-12'), danger : calCtrl.isBooked('3-12'), success : calCtrl.isSelected('3-12')}">
+                    ng-class="{info : calCtrl.slots[3][12].isAvailable, danger : calCtrl.slots[3][12].isBooked, success : calCtrl.slots[3][12].isSelected}">
                     12:00
                 </td>
                 <td id="4-12" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('4-12'), danger : calCtrl.isBooked('4-12'), success : calCtrl.isSelected('4-12')}">
+                    ng-class="{info : calCtrl.slots[4][12].isAvailable, danger : calCtrl.slots[4][12].isBooked, success : calCtrl.slots[4][12].isSelected}">
                     12:00
                 </td>
                 <td id="5-12" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('5-12'), danger : calCtrl.isBooked('5-12'), success : calCtrl.isSelected('5-12')}">
+                    ng-class="{info : calCtrl.slots[5][12].isAvailable, danger : calCtrl.slots[5][12].isBooked, success : calCtrl.slots[5][12].isSelected}">
                     12:00
                 </td>
                 <td id="6-12" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('6-12'), danger : calCtrl.isBooked('6-12'), success : calCtrl.isSelected('6-12')}">
+                    ng-class="{info : calCtrl.slots[6][12].isAvailable, danger : calCtrl.slots[6][12].isBooked, success : calCtrl.slots[6][12].isSelected}">
                     12:00
                 </td>
             </tr>
 
+
             <tr>
                 <td id="0-13" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('0-13'), danger : calCtrl.isBooked('0-13'), success : calCtrl.isSelected('0-13')}">
+                    ng-class="{info : calCtrl.slots[0][13].isAvailable, danger : calCtrl.slots[0][13].isBooked, success : calCtrl.slots[0][13].isSelected}">
                     13:00
                 </td>
                 <td id="1-13" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('1-13'), danger : calCtrl.isBooked('1-13'), success : calCtrl.isSelected('1-13')}">
+                    ng-class="{info : calCtrl.slots[1][13].isAvailable, danger : calCtrl.slots[1][13].isBooked, success : calCtrl.slots[1][13].isSelected}">
                     13:00
                 </td>
                 <td id="2-13" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('2-13'), danger : calCtrl.isBooked('2-13'), success : calCtrl.isSelected('2-13')}">
+                    ng-class="{info : calCtrl.slots[2][13].isAvailable, danger : calCtrl.slots[2][13].isBooked, success : calCtrl.slots[2][13].isSelected}">
                     13:00
                 </td>
                 <td id="3-13" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('3-13'), danger : calCtrl.isBooked('3-13'), success : calCtrl.isSelected('3-13')}">
+                    ng-class="{info : calCtrl.slots[3][13].isAvailable, danger : calCtrl.slots[3][13].isBooked, success : calCtrl.slots[3][13].isSelected}">
                     13:00
                 </td>
                 <td id="4-13" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('4-13'), danger : calCtrl.isBooked('4-13'), success : calCtrl.isSelected('4-13')}">
+                    ng-class="{info : calCtrl.slots[4][13].isAvailable, danger : calCtrl.slots[4][13].isBooked, success : calCtrl.slots[4][13].isSelected}">
                     13:00
                 </td>
                 <td id="5-13" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('5-13'), danger : calCtrl.isBooked('5-13'), success : calCtrl.isSelected('5-13')}">
+                    ng-class="{info : calCtrl.slots[5][13].isAvailable, danger : calCtrl.slots[5][13].isBooked, success : calCtrl.slots[5][13].isSelected}">
                     13:00
                 </td>
                 <td id="6-13" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('6-13'), danger : calCtrl.isBooked('6-13'), success : calCtrl.isSelected('6-13')}">
+                    ng-class="{info : calCtrl.slots[6][13].isAvailable, danger : calCtrl.slots[6][13].isBooked, success : calCtrl.slots[6][13].isSelected}">
                     13:00
                 </td>
             </tr>
 
+
             <tr>
                 <td id="0-14" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('0-14'), danger : calCtrl.isBooked('0-14'), success : calCtrl.isSelected('0-14')}">
+                    ng-class="{info : calCtrl.slots[0][14].isAvailable, danger : calCtrl.slots[0][14].isBooked, success : calCtrl.slots[0][14].isSelected}">
                     14:00
                 </td>
                 <td id="1-14" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('1-14'), danger : calCtrl.isBooked('1-14'), success : calCtrl.isSelected('1-14')}">
+                    ng-class="{info : calCtrl.slots[1][14].isAvailable, danger : calCtrl.slots[1][14].isBooked, success : calCtrl.slots[1][14].isSelected}">
                     14:00
                 </td>
                 <td id="2-14" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('2-14'), danger : calCtrl.isBooked('2-14'), success : calCtrl.isSelected('2-14')}">
+                    ng-class="{info : calCtrl.slots[2][14].isAvailable, danger : calCtrl.slots[2][14].isBooked, success : calCtrl.slots[2][14].isSelected}">
                     14:00
                 </td>
                 <td id="3-14" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('3-14'), danger : calCtrl.isBooked('3-14'), success : calCtrl.isSelected('3-14')}">
+                    ng-class="{info : calCtrl.slots[3][14].isAvailable, danger : calCtrl.slots[3][14].isBooked, success : calCtrl.slots[3][14].isSelected}">
                     14:00
                 </td>
                 <td id="4-14" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('4-14'), danger : calCtrl.isBooked('4-14'), success : calCtrl.isSelected('4-14')}">
+                    ng-class="{info : calCtrl.slots[4][14].isAvailable, danger : calCtrl.slots[4][14].isBooked, success : calCtrl.slots[4][14].isSelected}">
                     14:00
                 </td>
                 <td id="5-14" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('5-14'), danger : calCtrl.isBooked('5-14'), success : calCtrl.isSelected('5-14')}">
+                    ng-class="{info : calCtrl.slots[5][14].isAvailable, danger : calCtrl.slots[5][14].isBooked, success : calCtrl.slots[5][14].isSelected}">
                     14:00
                 </td>
                 <td id="6-14" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('6-14'), danger : calCtrl.isBooked('6-14'), success : calCtrl.isSelected('6-14')}">
+                    ng-class="{info : calCtrl.slots[6][14].isAvailable, danger : calCtrl.slots[6][14].isBooked, success : calCtrl.slots[6][14].isSelected}">
                     14:00
                 </td>
             </tr>
 
+
             <tr>
                 <td id="0-15" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('0-15'), danger : calCtrl.isBooked('0-15'), success : calCtrl.isSelected('0-15')}">
+                    ng-class="{info : calCtrl.slots[0][15].isAvailable, danger : calCtrl.slots[0][15].isBooked, success : calCtrl.slots[0][15].isSelected}">
                     15:00
                 </td>
                 <td id="1-15" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('1-15'), danger : calCtrl.isBooked('1-15'), success : calCtrl.isSelected('1-15')}">
+                    ng-class="{info : calCtrl.slots[1][15].isAvailable, danger : calCtrl.slots[1][15].isBooked, success : calCtrl.slots[1][15].isSelected}">
                     15:00
                 </td>
                 <td id="2-15" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('2-15'), danger : calCtrl.isBooked('2-15'), success : calCtrl.isSelected('2-15')}">
+                    ng-class="{info : calCtrl.slots[2][15].isAvailable, danger : calCtrl.slots[2][15].isBooked, success : calCtrl.slots[2][15].isSelected}">
                     15:00
                 </td>
                 <td id="3-15" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('3-15'), danger : calCtrl.isBooked('3-15'), success : calCtrl.isSelected('3-15')}">
+                    ng-class="{info : calCtrl.slots[3][15].isAvailable, danger : calCtrl.slots[3][15].isBooked, success : calCtrl.slots[3][15].isSelected}">
                     15:00
                 </td>
                 <td id="4-15" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('4-15'), danger : calCtrl.isBooked('4-15'), success : calCtrl.isSelected('4-15')}">
+                    ng-class="{info : calCtrl.slots[4][15].isAvailable, danger : calCtrl.slots[4][15].isBooked, success : calCtrl.slots[4][15].isSelected}">
                     15:00
                 </td>
                 <td id="5-15" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('5-15'), danger : calCtrl.isBooked('5-15'), success : calCtrl.isSelected('5-15')}">
+                    ng-class="{info : calCtrl.slots[5][15].isAvailable, danger : calCtrl.slots[5][15].isBooked, success : calCtrl.slots[5][15].isSelected}">
                     15:00
                 </td>
                 <td id="6-15" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('6-15'), danger : calCtrl.isBooked('6-15'), success : calCtrl.isSelected('6-15')}">
+                    ng-class="{info : calCtrl.slots[6][15].isAvailable, danger : calCtrl.slots[6][15].isBooked, success : calCtrl.slots[6][15].isSelected}">
                     15:00
                 </td>
             </tr>
 
             <tr>
                 <td id="0-16" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('0-16'), danger : calCtrl.isBooked('0-16'), success : calCtrl.isSelected('0-16')}">
+                    ng-class="{info : calCtrl.slots[0][16].isAvailable, danger : calCtrl.slots[0][16].isBooked, success : calCtrl.slots[0][16].isSelected}">
                     16:00
                 </td>
                 <td id="1-16" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('1-16'), danger : calCtrl.isBooked('1-16'), success : calCtrl.isSelected('1-16')}">
+                    ng-class="{info : calCtrl.slots[1][16].isAvailable, danger : calCtrl.slots[1][16].isBooked, success : calCtrl.slots[1][16].isSelected}">
                     16:00
                 </td>
                 <td id="2-16" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('2-16'), danger : calCtrl.isBooked('2-16'), success : calCtrl.isSelected('2-16')}">
+                    ng-class="{info : calCtrl.slots[2][16].isAvailable, danger : calCtrl.slots[2][16].isBooked, success : calCtrl.slots[2][16].isSelected}">
                     16:00
                 </td>
                 <td id="3-16" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('3-16'), danger : calCtrl.isBooked('3-16'), success : calCtrl.isSelected('3-16')}">
+                    ng-class="{info : calCtrl.slots[3][16].isAvailable, danger : calCtrl.slots[3][16].isBooked, success : calCtrl.slots[3][16].isSelected}">
                     16:00
                 </td>
                 <td id="4-16" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('4-16'), danger : calCtrl.isBooked('4-16'), success : calCtrl.isSelected('4-16')}">
+                    ng-class="{info : calCtrl.slots[4][16].isAvailable, danger : calCtrl.slots[4][16].isBooked, success : calCtrl.slots[4][16].isSelected}">
                     16:00
                 </td>
                 <td id="5-16" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('5-16'), danger : calCtrl.isBooked('5-16'), success : calCtrl.isSelected('5-16')}">
+                    ng-class="{info : calCtrl.slots[5][16].isAvailable, danger : calCtrl.slots[5][16].isBooked, success : calCtrl.slots[5][16].isSelected}">
                     16:00
                 </td>
                 <td id="6-16" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('6-16'), danger : calCtrl.isBooked('6-16'), success : calCtrl.isSelected('6-16')}">
+                    ng-class="{info : calCtrl.slots[6][16].isAvailable, danger : calCtrl.slots[6][16].isBooked, success : calCtrl.slots[6][16].isSelected}">
                     16:00
                 </td>
             </tr>
 
             <tr>
                 <td id="0-17" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('0-17'), danger : calCtrl.isBooked('0-17'), success : calCtrl.isSelected('0-17')}">
+                    ng-class="{info : calCtrl.slots[0][17].isAvailable, danger : calCtrl.slots[0][17].isBooked, success : calCtrl.slots[0][17].isSelected}">
                     17:00
                 </td>
                 <td id="1-17" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('1-17'), danger : calCtrl.isBooked('1-17'), success : calCtrl.isSelected('1-17')}">
+                    ng-class="{info : calCtrl.slots[1][17].isAvailable, danger : calCtrl.slots[1][17].isBooked, success : calCtrl.slots[1][17].isSelected}">
                     17:00
                 </td>
                 <td id="2-17" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('2-17'), danger : calCtrl.isBooked('2-17'), success : calCtrl.isSelected('2-17')}">
+                    ng-class="{info : calCtrl.slots[2][17].isAvailable, danger : calCtrl.slots[2][17].isBooked, success : calCtrl.slots[2][17].isSelected}">
                     17:00
                 </td>
                 <td id="3-17" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('3-17'), danger : calCtrl.isBooked('3-17'), success : calCtrl.isSelected('3-17')}">
+                    ng-class="{info : calCtrl.slots[3][17].isAvailable, danger : calCtrl.slots[3][17].isBooked, success : calCtrl.slots[3][17].isSelected}">
                     17:00
                 </td>
                 <td id="4-17" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('4-17'), danger : calCtrl.isBooked('4-17'), success : calCtrl.isSelected('4-17')}">
+                    ng-class="{info : calCtrl.slots[4][17].isAvailable, danger : calCtrl.slots[4][17].isBooked, success : calCtrl.slots[4][17].isSelected}">
                     17:00
                 </td>
                 <td id="5-17" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('5-17'), danger : calCtrl.isBooked('5-17'), success : calCtrl.isSelected('5-17')}">
+                    ng-class="{info : calCtrl.slots[5][17].isAvailable, danger : calCtrl.slots[5][17].isBooked, success : calCtrl.slots[5][17].isSelected}">
                     17:00
                 </td>
                 <td id="6-17" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('6-17'), danger : calCtrl.isBooked('6-17'), success : calCtrl.isSelected('6-17')}">
+                    ng-class="{info : calCtrl.slots[6][17].isAvailable, danger : calCtrl.slots[6][17].isBooked, success : calCtrl.slots[6][17].isSelected}">
                     17:00
                 </td>
             </tr>
 
             <tr>
                 <td id="0-18" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('0-18'), danger : calCtrl.isBooked('0-18'), success : calCtrl.isSelected('0-18')}">
+                    ng-class="{info : calCtrl.slots[0][18].isAvailable, danger : calCtrl.slots[0][18].isBooked, success : calCtrl.slots[0][18].isSelected}">
                     18:00
                 </td>
                 <td id="1-18" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('1-18'), danger : calCtrl.isBooked('1-18'), success : calCtrl.isSelected('1-18')}">
+                    ng-class="{info : calCtrl.slots[1][18].isAvailable, danger : calCtrl.slots[1][18].isBooked, success : calCtrl.slots[1][18].isSelected}">
                     18:00
                 </td>
                 <td id="2-18" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('2-18'), danger : calCtrl.isBooked('2-18'), success : calCtrl.isSelected('2-18')}">
+                    ng-class="{info : calCtrl.slots[2][18].isAvailable, danger : calCtrl.slots[2][18].isBooked, success : calCtrl.slots[2][18].isSelected}">
                     18:00
                 </td>
                 <td id="3-18" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('3-18'), danger : calCtrl.isBooked('3-18'), success : calCtrl.isSelected('3-18')}">
+                    ng-class="{info : calCtrl.slots[3][18].isAvailable, danger : calCtrl.slots[3][18].isBooked, success : calCtrl.slots[3][18].isSelected}">
                     18:00
                 </td>
                 <td id="4-18" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('4-18'), danger : calCtrl.isBooked('4-18'), success : calCtrl.isSelected('4-18')}">
+                    ng-class="{info : calCtrl.slots[4][18].isAvailable, danger : calCtrl.slots[4][18].isBooked, success : calCtrl.slots[4][18].isSelected}">
                     18:00
                 </td>
                 <td id="5-18" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('5-18'), danger : calCtrl.isBooked('5-18'), success : calCtrl.isSelected('5-18')}">
+                    ng-class="{info : calCtrl.slots[5][18].isAvailable, danger : calCtrl.slots[5][18].isBooked, success : calCtrl.slots[5][18].isSelected}">
                     18:00
                 </td>
                 <td id="6-18" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('6-18'), danger : calCtrl.isBooked('6-18'), success : calCtrl.isSelected('6-18')}">
+                    ng-class="{info : calCtrl.slots[6][18].isAvailable, danger : calCtrl.slots[6][18].isBooked, success : calCtrl.slots[6][18].isSelected}">
                     18:00
                 </td>
             </tr>
 
+
             <tr>
                 <td id="0-19" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('0-19'), danger : calCtrl.isBooked('0-19'), success : calCtrl.isSelected('0-19')}">
+                    ng-class="{info : calCtrl.slots[0][19].isAvailable, danger : calCtrl.slots[0][19].isBooked, success : calCtrl.slots[0][19].isSelected}">
                     19:00
                 </td>
                 <td id="1-19" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('1-19'), danger : calCtrl.isBooked('1-19'), success : calCtrl.isSelected('1-19')}">
+                    ng-class="{info : calCtrl.slots[1][19].isAvailable, danger : calCtrl.slots[1][19].isBooked, success : calCtrl.slots[1][19].isSelected}">
                     19:00
                 </td>
                 <td id="2-19" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('2-19'), danger : calCtrl.isBooked('2-19'), success : calCtrl.isSelected('2-19')}">
+                    ng-class="{info : calCtrl.slots[2][19].isAvailable, danger : calCtrl.slots[2][19].isBooked, success : calCtrl.slots[2][19].isSelected}">
                     19:00
                 </td>
                 <td id="3-19" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('3-19'), danger : calCtrl.isBooked('3-19'), success : calCtrl.isSelected('3-19')}">
+                    ng-class="{info : calCtrl.slots[3][19].isAvailable, danger : calCtrl.slots[3][19].isBooked, success : calCtrl.slots[3][19].isSelected}">
                     19:00
                 </td>
                 <td id="4-19" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('4-19'), danger : calCtrl.isBooked('4-19'), success : calCtrl.isSelected('4-19')}">
+                    ng-class="{info : calCtrl.slots[4][19].isAvailable, danger : calCtrl.slots[4][19].isBooked, success : calCtrl.slots[4][19].isSelected}">
                     19:00
                 </td>
                 <td id="5-19" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('5-19'), danger : calCtrl.isBooked('5-19'), success : calCtrl.isSelected('5-19')}">
+                    ng-class="{info : calCtrl.slots[5][19].isAvailable, danger : calCtrl.slots[5][19].isBooked, success : calCtrl.slots[5][19].isSelected}">
                     19:00
                 </td>
                 <td id="6-19" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('6-19'), danger : calCtrl.isBooked('6-19'), success : calCtrl.isSelected('6-19')}">
+                    ng-class="{info : calCtrl.slots[6][19].isAvailable, danger : calCtrl.slots[6][19].isBooked, success : calCtrl.slots[6][19].isSelected}">
                     19:00
                 </td>
             </tr>
 
             <tr>
                 <td id="0-20" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('0-20'), danger : calCtrl.isBooked('0-20'), success : calCtrl.isSelected('0-20')}">
+                    ng-class="{info : calCtrl.slots[0][20].isAvailable, danger : calCtrl.slots[0][20].isBooked, success : calCtrl.slots[0][20].isSelected}">
                     20:00
                 </td>
                 <td id="1-20" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('1-20'), danger : calCtrl.isBooked('1-20'), success : calCtrl.isSelected('1-20')}">
+                    ng-class="{info : calCtrl.slots[1][20].isAvailable, danger : calCtrl.slots[1][20].isBooked, success : calCtrl.slots[1][20].isSelected}">
                     20:00
                 </td>
                 <td id="2-20" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('2-20'), danger : calCtrl.isBooked('2-20'), success : calCtrl.isSelected('2-20')}">
+                    ng-class="{info : calCtrl.slots[2][20].isAvailable, danger : calCtrl.slots[2][20].isBooked, success : calCtrl.slots[2][20].isSelected}">
                     20:00
                 </td>
                 <td id="3-20" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('3-20'), danger : calCtrl.isBooked('3-20'), success : calCtrl.isSelected('3-20')}">
+                    ng-class="{info : calCtrl.slots[3][20].isAvailable, danger : calCtrl.slots[3][20].isBooked, success : calCtrl.slots[3][20].isSelected}">
                     20:00
                 </td>
                 <td id="4-20" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('4-20'), danger : calCtrl.isBooked('4-20'), success : calCtrl.isSelected('4-20')}">
+                    ng-class="{info : calCtrl.slots[4][20].isAvailable, danger : calCtrl.slots[4][20].isBooked, success : calCtrl.slots[4][20].isSelected}">
                     20:00
                 </td>
                 <td id="5-20" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('5-20'), danger : calCtrl.isBooked('5-20'), success : calCtrl.isSelected('5-20')}">
+                    ng-class="{info : calCtrl.slots[5][20].isAvailable, danger : calCtrl.slots[5][20].isBooked, success : calCtrl.slots[5][20].isSelected}">
                     20:00
                 </td>
                 <td id="6-20" ng-click="calCtrl.hourClick($event)"
-                    ng-class="{info : calCtrl.isAvailable('6-20'), danger : calCtrl.isBooked('6-20'), success : calCtrl.isSelected('6-20')}">
+                    ng-class="{info : calCtrl.slots[6][20].isAvailable, danger : calCtrl.slots[6][20].isBooked, success : calCtrl.slots[6][20].isSelected}">
                     20:00
                 </td>
             </tr>
 
 
+
         </tbody>
     </table>
+</div>
+
+<div class="dashboard col-xs-12 col-sm-4">
+
+</div>
+
 </div>
