@@ -37,3 +37,49 @@
 .table > tbody > tr > td.success {
   background-color: #dff0d8 !important;
 }
+
+.calendar-sidebar {
+  padding-top: 31px;
+}
+
+.legend {
+
+  border: 1px solid #ddd;
+  padding-bottom: 15px;
+
+  .info{
+    background-color: #d9edf7;
+  }
+
+  .success {
+    background-color: #dff0d8;
+  }
+
+  .danger {
+    background-color: #f2dede;
+  }
+
+
+  .legend-color {
+    border-radius: 3px;
+    height: 20px;
+    width: 100px;
+    float: right;
+  }
+
+
+}
+
+ .book-button {
+   margin-bottom: 50px;
+ }
+
+.meeting-text {
+  min-height: 235px;;
+  padding: 20px 10px;
+}
+
+.calendar-message {
+  font-size: 33px;
+  line-height: 43px;
+}

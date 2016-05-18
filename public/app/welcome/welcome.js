@@ -12,9 +12,12 @@ angular.module('app').directive('welcomePage', function () {
         restrict: 'E',
         templateUrl: 'app/welcome/welcome.html',
         controllerAs: 'ctrl',
-        controller: function ($scope) {
+        controller: function ($scope, $http) {
 
 
+
+            
+            
         }
     };
 });

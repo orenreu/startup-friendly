@@ -52,7 +52,7 @@ angular.module('app').directive('editSlots', function () {
 
                 var firstHour = parseInt(ctrl.newSlot.hoursFrom);
                 for (var i = 0; i < hours; i++) {
-                    ctrl.newSlot.hoursSlots.push({hour: firstHour, booked: false});
+                    ctrl.newSlot.hoursSlots.push({hour: firstHour});
                     firstHour++;
                 }
 

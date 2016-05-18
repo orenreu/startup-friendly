@@ -28,7 +28,26 @@ var Room = thinky.createModel("Room", {
     email: type.string(),
     phone: type.string(),
     slots: [type.object()],
+    booked: [type.object()],
     createdAt: type.date().default(r.now())
-}); 
+});
 
-module.exports = {Room, r};
+
+
+var User = thinky.createModel('User', {
+    id: type.string(),
+    providerId: type.string(),
+    provider: type.string(),
+    firstName: type.string(),
+    lastName: type.string(),
+    email: type.string(),
+    photo: type.string()
+})
+
+User.ensureIndex('provider_providerId', function(doc) {
+    return [doc('provider'), doc('providerId')]
+})
+
+
+
+module.exports = {Room, User, r};

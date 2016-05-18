@@ -5910,8 +5910,11 @@ body {
   width: 80%;
   margin: 20px auto 20px; }
 
+.navbar-nav .avatar-menu {
+  margin-top: 20px; }
+
 .navbar-nav .sign-in {
-  margin-top: 40px; }
+  margin-top: 10px; }
   .navbar-nav .sign-in:hover {
     background-color: transparent; }
 
@@ -5921,6 +5924,32 @@ nav.navbar {
 .navbar-default {
   background-color: transparent;
   border-color: transparent; }
+
+.navbar-brand {
+  height: inherit; }
+
+.nav img.avatar {
+  max-width: 50px;
+  border-radius: 50%;
+  border: 1px solid white; }
+
+.nav .md-button.md-icon-button {
+  margin: 0 6px;
+  height: inherit;
+  min-width: 0;
+  line-height: 24px;
+  padding: 8px;
+  width: inherit;
+  border-radius: 50%; }
+
+.md-open-menu-container.md-active {
+  margin-left: -112px; }
+
+md-menu-content {
+  border-radius: 5px; }
+
+.navbar-header {
+  width: 100%; }
 
 footer.site-footer {
   height: 100px;
@@ -5962,6 +5991,16 @@ label {
   background-color: #35e4bd;
   border: 1px solid #35e4bd;
   border-radius: 4px; }
+
+.btn-facebook {
+  background-color: #3b5998;
+  color: white;
+  border-radius: 50px;
+  padding: 5px 20px;
+  text-transform: none; }
+  .btn-facebook:hover, .btn-facebook:active, .btn-facebook:focus {
+    background-color: #3b5998 !important;
+    color: white; }
 
 .app-content.new-room {
   background-image: url("../../../images/meeting_room_2.jpg");
@@ -6022,7 +6061,36 @@ label {
     background-color: #fcf8e3; }
 
 .table > tbody > tr > td.success {
-  background-color: #dff0d8; }
+  background-color: #dff0d8 !important; }
+
+.calendar-sidebar {
+  padding-top: 31px; }
+
+.legend {
+  border: 1px solid #ddd;
+  padding-bottom: 15px; }
+  .legend .info {
+    background-color: #d9edf7; }
+  .legend .success {
+    background-color: #dff0d8; }
+  .legend .danger {
+    background-color: #f2dede; }
+  .legend .legend-color {
+    border-radius: 3px;
+    height: 20px;
+    width: 100px;
+    float: right; }
+
+.book-button {
+  margin-bottom: 50px; }
+
+.meeting-text {
+  min-height: 235px;
+  padding: 20px 10px; }
+
+.calendar-message {
+  font-size: 33px;
+  line-height: 43px; }
 
 .app-content.room-details {
   padding-top: 150px; }

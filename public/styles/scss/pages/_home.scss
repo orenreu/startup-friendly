@@ -7,6 +7,9 @@
   width: 100%;
 }
 
+
+
+
 .hero-image {
   background-image: url('../../../images/bg.jpg');
   background-size: cover;
@@ -38,21 +41,21 @@
   }
 }
 
-.hero-form {
+//Search BAr
 
+.hero-form {
 
   border-radius: 3px;
 
-@include respond-to("small" ) {
-  display:inline-block;
-  border: 1px solid #000;
-  background-color: white;
-}
+  @include respond-to("small") {
+    display: inline-block;
+    border: 1px solid #000;
+    background-color: white;
+  }
 
   .form-group:first-child select {
 
-
-    @include respond-to("small" ) {
+    @include respond-to("small") {
       border-right: 1px solid #ccc;
       border-radius: 3px 0 0 3px;
     }
@@ -65,8 +68,8 @@
     height: 50px;
 
     @include respond-to("small") {
-      border:0;
-  }
+      border: 0;
+    }
 
   }
 
@@ -80,7 +83,7 @@
     height: 50px;
 
     @include respond-to("small") {
-      border:0;
+      border: 0;
     }
   }
 
@@ -99,12 +102,11 @@
     width: 100%;
     height: 50px;
 
-    @include respond-to("small" ) {
+    @include respond-to("small") {
       border-radius: 0 3px 3px 0;
       width: auto;
     }
   }
-
 
   .datepicker-div {
 
@@ -112,7 +114,7 @@
     height: 50px;
     border: 1px solid #ccc;
 
-    @include respond-to("small" ) {
+    @include respond-to("small") {
       border: 0;
       border-left: 1px solid #ccc;
       border-right: 1px solid #ccc;
@@ -120,13 +122,12 @@
 
     input {
 
-      border:0;
+      border: 0;
 
-      @include respond-to("small" ) {
+      @include respond-to("small") {
         border: 0;
       }
     }
-
 
     .md-datepicker-triangle-button {
       right: 9px;
@@ -134,11 +135,9 @@
       height: 36px;
     }
 
-
   }
 }
 
 div.date {
   margin-right: -6px;
 }
-
