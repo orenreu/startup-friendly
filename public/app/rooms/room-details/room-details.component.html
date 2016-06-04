@@ -1,29 +1,37 @@
 <div class="app-content room-details">
     <div class="container">
-
-        <div class="white-div">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6">
-                    <img ng-src="{{ ctrl.room.image }}" class="img-responsive">
-                </div>
-                <div class="col-xs-12 col-sm-6">
+    <div class="row">
+        <div class="col-xs-12 col-sm-3">
+                <div class="room-image-div">
+                    <img ng-src="{{ ctrl.room.image }}" class="img-responsive room-image">
                     <img ng-src="{{ ctrl.room.logo }}" class="img-responsive company-logo">
-                    <h1>{{ ctrl.room.name }}</h1>
-                    <p>{{ ctrl.room.company }}</p>
-                    <p>{{ ctrl.room.address }}, Floor {{ ctrl.room.floor }}, Entrance {{ ctrl.room.entrance }}</p>
-                    <p>{{ ctrl.room.city_part }} Tel Aviv</p>
-                    <p>{{ ctrl.room.guests }}</p>
-                    <p>{{ ctrl.room.wifi_name }}</p>
-                    <p>{{ ctrl.room.wifi_pass }}</p>
-                    <p>{{ ctrl.room.description }}</p>
-                    <p>{{ ctrl.room.contact_name }}</p>
-                    <p>{{ ctrl.room.email }}</p>
-                    <p>{{ ctrl.room.phone }}</p>
                 </div>
-            </div>
+                <div>
+
+                    <h3>{{ ctrl.room.name }}</h3>
+                    <h4>{{ ctrl.room.company }}, {{ ctrl.room.address }}<span ng-show="ctrl.room.floor != ''">, Floor {{ ctrl.room.floor }}</span><span ng-show="ctrl.room.entrance != ''">, Entrance {{ ctrl.room.entrance }}</span>.</h4>
+                    <p>{{ ctrl.room.description }}</p>
+                    <br>
+                    <h5><md-icon>phone</md-icon>&nbsp; &nbsp;  <a href="tel:{{ ctrl.room.phone }}">{{ ctrl.room.phone }}</a></h5>
+                    <h5><md-icon>people</md-icon>&nbsp; &nbsp;  Up to {{ ctrl.room.guests }} guests</h5>
+                    <h5><md-icon>wifi</md-icon>&nbsp; &nbsp;  {{ ctrl.room.wifi_name }} - {{ ctrl.room.wifi_pass }}</h5>
+
+                </div>
+                <div ng-show="ctrl.isAdmin()" class="text-center">
+                    <br>
+                    <br>
+                    <a href="/slots/{{ ctrl.room.id }}"><button class="btn btn-default"><md-icon>create</md-icon> Edit Slots</button></a>
+                </div>
         </div>
 
-        <calendar></calendar>
+
+        <div class="col-xs-12 col-sm-9">
+            <calendar></calendar>
+        </div>
+
+    </div>
+
+
 
 
     </div><!-- .container -->

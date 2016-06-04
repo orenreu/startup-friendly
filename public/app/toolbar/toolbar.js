@@ -14,14 +14,16 @@ angular.module('app').controller('ToolbarController', [
     '$stateParams',
     '$mdDialog',
     '$mdMedia',
-    function (ctrl$scope, $rootScope, $http, $stateParams, $mdDialog, $mdMedia) {
+    '$location',
+    function ($scope, $rootScope, $http, $stateParams, $mdDialog, $mdMedia, $location) {
 
         var ctrl = this;
 
-        ctrl.user = [];
+        ctrl.user = {};
 
         $http.get("/api/user").then(function (response) {
             ctrl.user = response.data
+           // console.log(ctrl.user);
         })
 
 
@@ -33,7 +35,7 @@ angular.module('app').controller('ToolbarController', [
             }
         }
 
-
+      
 
         ctrl.login = function () {
            openLogintDialog();
@@ -59,6 +61,18 @@ angular.module('app').controller('ToolbarController', [
                 $mdDialog.cancel();
             }
         };
+
+
+
+
+        //Listen to time change and reBootstrap the app
+        var unbindPopLogin = $rootScope.$on('popLogin', function (event) {
+            openLogintDialog();
+        });
+
+        //Unbinding from rootScope (see more at:"http://stackoverflow.com/questions/11252780/whats-the-correct-way-to-communicate-between-controllers-in-angularjs")
+        $scope.$on('$destroy', unbindPopLogin);
+
 
     }]);
 

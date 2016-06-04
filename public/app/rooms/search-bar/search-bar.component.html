@@ -2,16 +2,16 @@
 <form class="form-inline hero-form">
 
     <div class="form-group">
-        <select name="location" class="form-control">
-            <option disabled selected>Where do you want to meet?</option>
+        <select name="location" class="form-control" ng-model="ctrl.query.location">
+            <option  value="-1" disabled selected>Where do you want to meet?</option>
             <option value="south">South Tel Aviv</option>
             <option value="center">Center Tel Aviv</option>
             <option value="north">North Tel Aviv</option>
         </select>
     </div>
     <div class="form-group">
-        <select name="location" class="form-control">
-            <option disabled selected>How many people?</option>
+        <select name="guests" class="form-control" ng-model="ctrl.query.guests">
+            <option value="-1" disabled selected>How many people?</option>
             <option value="1">1 Guest</option>
             <option value="2">2 Guests</option>
             <option value="3">3 Guests</option>
@@ -28,66 +28,44 @@
         </select>
     </div>
     <div class="form-group datepicker-div">
-        <md-datepicker  ng-model="ctrl.newSlot.date" md-placeholder="When?"></md-datepicker>
+        <md-datepicker  md-min-date="ctrl.minDate" ng-model="ctrl.query.date" md-placeholder="When?"></md-datepicker>
     </div>
     <div class="form-group">
-        <select name="from" class="form-control from">
-            <option disabled selected>Start</option>
-            <option ng-value="8">08:00</option>
-            <option ng-value="9">09:00</option>
-            <option ng-value="10">10:00</option>
-            <option ng-value="11">11:00</option>
-            <option ng-value="12">12:00</option>
-            <option ng-value="13">13:00</option>
-            <option ng-value="14">14:00</option>
-            <option ng-value="15">15:00</option>
-            <option ng-value="16">16:00</option>
-            <option ng-value="17">17:00</option>
-            <option ng-value="18">18:00</option>
-            <option ng-value="19">19:00</option>
-            <option ng-value="20">20:00</option>
-            <option ng-value="21">21:00</option>
-            <option ng-value="22">22:00</option>
-            <option ng-value="23">23:00</option>
-            <option ng-value="0">00:00</option>
-            <option ng-value="1">01:00</option>
-            <option ng-value="2">02:00</option>
-            <option ng-value="3">03:00</option>
-            <option ng-value="4">04:00</option>
-            <option ng-value="5">05:00</option>
-            <option ng-value="6">06:00</option>
-            <option ng-value="7">07:00</option>
+        <select name="from" class="form-control from" ng-model="ctrl.query.from">
+            <option value="-1" disabled selected>From</option>
+            <option value="8">08:00</option>
+            <option value="9">09:00</option>
+            <option value="10">10:00</option>
+            <option value="11">11:00</option>
+            <option value="12">12:00</option>
+            <option value="13">13:00</option>
+            <option value="14">14:00</option>
+            <option value="15">15:00</option>
+            <option value="16">16:00</option>
+            <option value="17">17:00</option>
+            <option value="18">18:00</option>
+            <option value="19">19:00</option>
+            <option value="20">20:00</option>
         </select>
     </div>
     <div class="form-group">
-        <select name="to" class="form-control">
-            <option disabled selected>End</option>
-            <option ng-value="8">08:00</option>
-            <option ng-value="9">09:00</option>
-            <option ng-value="10">10:00</option>
-            <option ng-value="11">11:00</option>
-            <option ng-value="12">12:00</option>
-            <option ng-value="13">13:00</option>
-            <option ng-value="14">14:00</option>
-            <option ng-value="15">15:00</option>
-            <option ng-value="16">16:00</option>
-            <option ng-value="17">17:00</option>
-            <option ng-value="18">18:00</option>
-            <option ng-value="19">19:00</option>
-            <option ng-value="20">20:00</option>
-            <option ng-value="21">21:00</option>
-            <option ng-value="22">22:00</option>
-            <option ng-value="23">23:00</option>
-            <option ng-value="0">00:00</option>
-            <option ng-value="1">01:00</option>
-            <option ng-value="2">02:00</option>
-            <option ng-value="3">03:00</option>
-            <option ng-value="4">04:00</option>
-            <option ng-value="5">05:00</option>
-            <option ng-value="6">06:00</option>
-            <option ng-value="7">07:00</option>
+        <select name="to" class="form-control" ng-model="ctrl.query.to" >
+            <option value="-1" disabled selected>To</option>
+            <option value="8">08:00</option>
+            <option value="9">09:00</option>
+            <option value="10">10:00</option>
+            <option value="11">11:00</option>
+            <option value="12">12:00</option>
+            <option value="13">13:00</option>
+            <option value="14">14:00</option>
+            <option value="15">15:00</option>
+            <option value="16">16:00</option>
+            <option value="17">17:00</option>
+            <option value="18">18:00</option>
+            <option value="19">19:00</option>
+            <option value="20">20:00</option>
         </select>
     </div>
-    <button type="submit">Go Go Go!</button>
+    <button type="submit" ng-click="ctrl.submit()">Go Go Go!</button>
 </form>
 </div>

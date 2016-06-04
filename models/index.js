@@ -27,11 +27,26 @@ var Room = thinky.createModel("Room", {
     contact_name: type.string(),
     email: type.string(),
     phone: type.string(),
-    slots: [type.object()],
-    booked: [type.object()],
+    slots: type.array().schema(type.object().schema({
+        date: type.date(),
+        day: type.number(),
+        hoursFrom: type.number(),
+        hoursTo: type.number(),
+        hoursSlots: type.array().schema(type.object().schema({
+            hour: type.number()
+        })),
+        isDate: type.boolean()
+    })),
+    booked: type.array().schema(type.object().schema({
+            date: type.date(),
+            hour: type.number(),
+            user: type.string(),
+            username: type.string(),
+            meetingId: type.string()
+        })
+    ),
     createdAt: type.date().default(r.now())
 });
-
 
 
 var User = thinky.createModel('User', {
@@ -41,13 +56,35 @@ var User = thinky.createModel('User', {
     firstName: type.string(),
     lastName: type.string(),
     email: type.string(),
-    photo: type.string()
+    photo: type.string(),
+    isAdmin: type.boolean()
 })
 
-User.ensureIndex('provider_providerId', function(doc) {
+User.ensureIndex('provider_providerId', function (doc) {
     return [doc('provider'), doc('providerId')]
 })
 
 
 
-module.exports = {Room, User, r};
+var Meeting = thinky.createModel('Meeting', {
+    id: type.string(),
+    userId: type.string(),
+    roomId: type.string(),
+    roomName: type.string(),
+    roomCompany: type.string(),
+    date: type.date(),
+    hoursFrom: type.number(),
+    hoursTo: type.number()
+});
+
+
+User.hasMany(Meeting, "meetings", "id", "userId");
+Meeting.belongsTo(User, "user", "userId", "id");
+
+Room.hasMany(Meeting, "meetings", "id", "roomId");
+Meeting.belongsTo(Room, "room", "roomId", "id");
+
+
+
+
+module.exports = {Room, User, Meeting, r};

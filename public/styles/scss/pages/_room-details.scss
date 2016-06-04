@@ -1,3 +1,24 @@
 .app-content.room-details {
   padding-top: 150px;
+  min-height: calc(100vh - 100px);
+}
+
+.slot-form {
+  margin-top: 48px;
+}
+
+
+.room-image-div{
+  position:relative;
+  margin-top: 48px;
+}
+
+.room-image-div .company-logo {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+}
+
+.room-image-div .room-image {
+  border-radius: 4px;
 }

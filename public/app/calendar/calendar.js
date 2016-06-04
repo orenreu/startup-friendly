@@ -14,7 +14,7 @@ angular.module('app').directive('calendar', function () {
         restrict: 'E',
         templateUrl: 'app/calendar/calendar.component.html',
         controllerAs: 'calCtrl',
-        controller: function ($scope, $rootScope, $http, $stateParams) {
+        controller: function ($scope, $rootScope, $http, $stateParams, $sce, $mdToast, $mdDialog) {
             var ctrl = this;
 
             //Set the first day of the week for momentJS
@@ -28,10 +28,11 @@ angular.module('app').directive('calendar', function () {
 
             ctrl.selected = [];
 
-            ctrl.message = "No hours selected.";
+            ctrl.message = $sce.trustAsHtml("No hours selected.");
 
             ctrl.okToBook = false;
 
+            ctrl.user = {};
 
             setWeek();
             setUpSlots();
@@ -39,7 +40,7 @@ angular.module('app').directive('calendar', function () {
 
             $http.get('api/room/' + $stateParams.roomId).then(function (res) {
                 ctrl.room = res.data;
-                console.log(ctrl.room.slots);
+                console.log(ctrl.room.booked);
 
                 startup();
 
@@ -49,6 +50,20 @@ angular.module('app').directive('calendar', function () {
             });
 
 
+            $http.get("/api/user").then(function (response) {
+                ctrl.user = response.data
+            })
+
+
+            ctrl.isLogged = function () {
+                if (ctrl.user.id) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+
+
             // When a slot is clicked
             ctrl.hourClick = function (event) {
                 var id = event.target.id;
@@ -56,8 +71,19 @@ angular.module('app').directive('calendar', function () {
                 var day = id[0];
                 var hour = id[1];
 
+                if (ctrl.slots[day][hour].isBooked) {
+                    $mdToast.show($mdToast.simple({position: "right bottom"}).textContent("Booked by " + ctrl.slots[day][hour].username));
+                }
+
                 //If the slot is available and not booked
                 if (ctrl.slots[day][hour].isAvailable && !ctrl.slots[day][hour].isBooked) {
+
+                    //If user is not logged in open login window
+                    if (!ctrl.isLogged()) {
+                        $rootScope.$broadcast("popLogin");
+                        return
+                    }
+
 
                     if (ctrl.slots[day][hour].isSelected) {
                         //Remove from selected
@@ -71,9 +97,14 @@ angular.module('app').directive('calendar', function () {
 
                     } else {
                         //Add to selected
-                        ctrl.selected.push({date: ctrl.week[day], hour: hour});
+                        ctrl.selected.push({
+                            date: ctrl.week[day],
+                            hour: hour,
+                            user: ctrl.user.id,
+                            username: ctrl.user.firstName + " " + ctrl.user.lastName
+                        });
                         ctrl.slots[day][hour].isSelected = true;
-
+                        console.log(ctrl.selected);
                         calcSelection();
 
                     }
@@ -89,7 +120,7 @@ angular.module('app').directive('calendar', function () {
                     //Get the selection date
                     for (var i = 1; i < ctrl.selected.length; i++) {
                         if (!moment(ctrl.selected[i].date).isSame(date, "day")) {
-                            ctrl.message = "Please select hours on the same day.";
+                            ctrl.message = $sce.trustAsHtml("Please select hours on the same day.");
                             ctrl.okToBook = false;
                             return;
                         }
@@ -108,17 +139,17 @@ angular.module('app').directive('calendar', function () {
                     //Check if hours are consecutive
                     for (var i = 0; i < hours.length - 1; i++) {
                         if (hours[i + 1] - hours[i] > 1) {
-                            ctrl.message = "Please select consecutive hours.";
+                            ctrl.message = $sce.trustAsHtml("Please select consecutive hours.");
                             ctrl.okToBook = false;
                             return;
                         }
                     }
 
-                    ctrl.message = "Your meeting is on " + moment(date).format("MMM DD YYYY") + " from " + hours[0] + ":00 to " + (hours[hours.length - 1] + 1) + ":00.";
+                    ctrl.message = $sce.trustAsHtml("Your meeting is on <span class='thin'>" + moment(date).format("MMM DD YYYY") + "</span> from <span class='thin'>" + hours[0] + ":00</span> to <span class='thin'>" + (hours[hours.length - 1] + 1) + ":00</span>.");
                     ctrl.okToBook = true;
 
                 } else {
-                    ctrl.message = "No hours selected.";
+                    ctrl.message = $sce.trustAsHtml("No hours selected.");
                     ctrl.okToBook = false;
                 }
 
@@ -147,7 +178,7 @@ angular.module('app').directive('calendar', function () {
                         for (var l = 0; l < ctrl.room.slots[i].hoursSlots.length; l++) {
                             var hour = ctrl.room.slots[i].hoursSlots[l].hour;
 
-                                ctrl.slots[day][hour].isAvailable = true;
+                            ctrl.slots[day][hour].isAvailable = true;
 
                         }
 
@@ -177,7 +208,7 @@ angular.module('app').directive('calendar', function () {
             function setBooked() {
                 if (typeof(ctrl.room.booked) !== 'undefined') {
 
-                    for(var i = 0; i < ctrl.room.booked.length; i++) {
+                    for (var i = 0; i < ctrl.room.booked.length; i++) {
 
                         for (var z = 0; z < 7; z++) {
 
@@ -188,10 +219,10 @@ angular.module('app').directive('calendar', function () {
 
                                 ctrl.slots[day][hour].isAvailable = false;
                                 ctrl.slots[day][hour].isBooked = true;
+                                ctrl.slots[day][hour].username = ctrl.room.booked[i].username;
 
                             }
                         }
-
 
 
                     }
@@ -202,25 +233,23 @@ angular.module('app').directive('calendar', function () {
 
 
             ctrl.bookRoom = function () {
+
                 if (ctrl.okToBook) {
 
-                    var data = {selected:ctrl.selected};
-
-                    $http.post('api/room/book/' + $stateParams.roomId, data)
-                        .then(
-                            function (response) {
-                                ctrl.room = response.data;
-                                ctrl.selected = [];
-                                startup();
-                            }, function (err) {
-
-                            });
-                }
+                    $mdDialog.show({
+                        controller: ConfirmDialogController,
+                        controllerAs: 'ctrl',
+                        templateUrl:'/app/calendar/confirmationDialog.html',
+                        parent: angular.element(document.body),
+                        clickOutsideToClose: true
+                    })
+                };
             }
 
 
+
             ctrl.clearSelection = function () {
-                ctrl.message = "No hours selected.";
+                ctrl.message = $sce.trustAsHtml("No hours selected.");
                 ctrl.selected = [];
                 startup();
             }
@@ -249,6 +278,48 @@ angular.module('app').directive('calendar', function () {
                 ctrl.now.subtract(1, "weeks");
                 setWeek();
                 startup();
+            }
+
+
+
+
+            function ConfirmDialogController($mdDialog) {
+
+                var ctrl = this;
+
+                //Confirm Booking
+                ctrl.confirm = function() {
+                    confrimBooking()
+                    $mdDialog.cancel();
+                }
+
+
+                //Close Dialog window
+                ctrl.cancel = function () {
+                    $mdDialog.cancel();
+                };
+
+            }
+
+
+
+            function confrimBooking() {
+
+
+                var data = {selected: ctrl.selected};
+
+
+                $http.post('api/room/book/' + $stateParams.roomId, data)
+                    .then(
+                        function (response) {
+                            ctrl.room = response.data;
+                            ctrl.selected = [];
+                            $mdToast.show($mdToast.simple({position: "right bottom"}).textContent("Room was booked"));
+                            startup();
+                        }, function (err) {
+
+                        });
+
             }
 
 

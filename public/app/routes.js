@@ -14,6 +14,13 @@ angular.module('app').config(function ($urlRouterProvider, $stateProvider, $loca
             url: '/',
             template: '<welcome-page></welcome-page>'
         })
+        .state('login', {
+            url: '/login',
+            params: {
+                login: true,
+            },
+            template: '<welcome-page></welcome-page>'
+        })
         .state('room-list', {
             url: '/room',
             template: '<room-list></room-list>'
@@ -25,6 +32,11 @@ angular.module('app').config(function ($urlRouterProvider, $stateProvider, $loca
         .state('roomDetails', {
             url: '/room/:roomId',
             template: '<room-details></room-details>',
+
+        })
+        .state('meetings', {
+            url: '/meetings/:user',
+            template: '<meetings></meetings>',
 
         })
         .state('slots', {

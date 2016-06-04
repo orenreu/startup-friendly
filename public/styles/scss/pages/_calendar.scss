@@ -1,8 +1,6 @@
 
-
 .calendar {
 
-  padding-top: 30px;
   padding-bottom: 30px;
 
   table {
@@ -13,10 +11,9 @@
     th {
       text-align: center;
 
-
     }
 
-    td{
+    td {
       &:focus {
         outline: none;
       }
@@ -26,7 +23,6 @@
       }
     }
   }
-
 
   th.today {
     background-color: #fcf8e3;
@@ -39,15 +35,16 @@
 }
 
 .calendar-sidebar {
-  padding-top: 31px;
+
 }
 
 .legend {
 
   border: 1px solid #ddd;
-  padding-bottom: 15px;
+  padding: 10px;
+  border-radius: 4px;
 
-  .info{
+  .info {
     background-color: #d9edf7;
   }
 
@@ -59,20 +56,20 @@
     background-color: #f2dede;
   }
 
-
   .legend-color {
     border-radius: 3px;
-    height: 20px;
-    width: 100px;
+    height: 14px;
+    width: 90px;
     float: right;
+    margin-top: 2px;
+    margin-right: 20px;
   }
-
 
 }
 
- .book-button {
-   margin-bottom: 50px;
- }
+.book-button {
+  margin-bottom: 50px;
+}
 
 .meeting-text {
   min-height: 235px;;
@@ -80,6 +77,13 @@
 }
 
 .calendar-message {
-  font-size: 33px;
+  font-family: 'Raleway';
+  font-weight:200;
+  font-size: 25px;
   line-height: 43px;
+  font-weight: 100;
+}
+
+.calendar-message .thin {
+  font-weight: 600;
 }

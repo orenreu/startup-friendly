@@ -28,24 +28,33 @@ angular.module('app').directive('editSlots', function () {
 
             ctrl.newSlot = {
                 isDate: false,
-                date: "",
-                day: 0,
-                hoursFrom: 8,
-                hoursTo: 12,
+                date: null,
+                day: null,
+                hoursFrom: "",
+                hoursTo: "",
                 hoursSlots: []
             };
 
 
             ctrl.saveSlot = function () {
 
+                //Validate
+               if(ctrl.newSlot.date == "" && ctrl.newSlot.day == ""){
+                   return;
+               }
+
+                if(ctrl.newSlot.hoursTo == "" || ctrl.newSlot.hoursFrom == ""){
+                    return;
+                }
+
+
+
+
                 var hours = ctrl.newSlot.hoursTo - ctrl.newSlot.hoursFrom;
 
                 //if hours is negative hours were not input correctly
                 if(hours <= 0) {
-                    $mdToast.show({
-                        template: "<md-toast>A meeting can't end before it started</md-toast>",
-                        position:"bottom right"
-                    })
+                    $mdToast.show($mdToast.simple({position: "right bottom"}).textContent("A meeting can't end before it began."));
                     return;
                 }
 
@@ -72,8 +81,8 @@ angular.module('app').directive('editSlots', function () {
 
                 ctrl.newSlot = {
                     isDate: false,
-                    date: "",
-                    day: 0,
+                    date: null,
+                    day: null,
                     hoursFrom: 8,
                     hoursTo: 12,
                     hoursSlots: []

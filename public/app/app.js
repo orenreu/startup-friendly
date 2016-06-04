@@ -11,5 +11,6 @@ angular.module('app', [
     'ui.router',
     'ngFileUpload',
     'ui.bootstrap',
+    'angularUtils.directives.dirPagination'
 ])
 

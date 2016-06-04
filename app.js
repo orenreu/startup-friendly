@@ -11,6 +11,7 @@ var app = express();
 var login = require('./config/passport')
 var room = require('./api/room');
 var user = require('./api/user');
+var meeting = require('./api/meeting');
 var imageUpload = require('./api/image-upload');
 
 require('./models');
@@ -30,6 +31,33 @@ app.use(passport.session());
 
 
 
+var isAuthenticated = function (req, res, next) {
+    if (req.isAuthenticated())
+        return next();
+    res.redirect('/login');
+}
+
+var isAdmin = function(req, res, next) {
+    if (req.isAuthenticated() && req.user.isAdmin) {
+        return next();
+    }
+    res.redirect('/login');
+}
+
+var isSameUser = function(req, res, next) {
+
+    if(req.isAuthenticated()) {
+        var reqUserId = req.params.user;
+        var authUserId = req.user.id;
+
+        if (reqUserId == authUserId) {
+            return next();
+        }
+    }
+
+    res.redirect('/login');
+}
+
 
 
 
@@ -43,16 +71,19 @@ app.use('/api/room', room);
 app.use('/api/image-upload', imageUpload);
 app.use('/api/logo-upload', imageUpload);
 app.use('/api/user', user);
+app.use('/api/meeting', meeting);
 
 
 // Serve index file for all known paths
 function serveIndex(req, res) {
     res.sendFile(path.join(__dirname, '/public/index.html'))
 }
+app.get('/login', serveIndex)
 app.get('/room', serveIndex)
-app.get('/room/create', serveIndex)
+app.get('/room/create', isAdmin, serveIndex)
 app.get('/room/:roomId', serveIndex)
-app.get('/slots/:roomId', serveIndex)
+app.get('/slots/:roomId', isAdmin, serveIndex)
+app.get('/meetings/:user',isSameUser, serveIndex)
 
 
 app.listen(3000);

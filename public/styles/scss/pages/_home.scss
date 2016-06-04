@@ -13,15 +13,14 @@
 .hero-image {
   background-image: url('../../../images/bg.jpg');
   background-size: cover;
-  height: 100vh;
-  width: 100vw;
+  min-height: calc(100vh - 100px);
 }
 
 .hero-box {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: calc(100vh - 100px);
 }
 
 .hero-text {

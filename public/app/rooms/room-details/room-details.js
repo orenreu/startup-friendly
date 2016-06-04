@@ -22,6 +22,38 @@ angular.module('app').directive('roomDetails', function () {
             }, function (error) {
                 console.log(error);
             });
+
+
+            ctrl.user = {};
+
+            $http.get("/api/user").then(function (response) {
+                ctrl.user = response.data
+                // console.log(ctrl.user);
+            })
+
+
+            ctrl.isLogged = function () {
+                if( ctrl.user.id) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+
+            ctrl.isAdmin = function() {
+
+                if(ctrl.isLogged()){
+                    return ctrl.user.isAdmin;
+                }
+                return false;
+            }
+
+
+
+
+
+
+
         }
     }
 });

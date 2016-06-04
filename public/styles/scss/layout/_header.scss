@@ -6,13 +6,16 @@
   margin-top: 20px;
 }
 
-
 .navbar-nav .sign-in {
   margin-top: 10px;
 
-  &:hover{
+  &:hover {
     background-color: transparent;
   }
+}
+
+.navbar-default .navbar-toggle {
+  margin-top: 25px;
 }
 
 nav.navbar {
@@ -52,6 +55,3 @@ md-menu-content {
   border-radius: 5px;
 }
 
-.navbar-header {
-  width: 100%;
-}

@@ -10,12 +10,13 @@ var multer  = require('multer');
 var upload = multer({ dest: 'uploads/' });
 var cloudinary = require('cloudinary');
 var process = require('process');
+var constants = require('../config/constants');
 var fs = require("fs");
 
 cloudinary.config({
-    cloud_name: "benzo",
-    api_key: "776284389836144",
-    api_secret: "rZdGUWjE2VnDkaFNdRMb1IT13eM"
+    cloud_name: constants.CLOUDINARY_NAME,
+    api_key: constants.CLOUDINARY_API_KEY,
+    api_secret: constants.CLOUDINARY_API_SECRET
 });
 
 router.post('/', upload.single('file'), function (req, res, next) {

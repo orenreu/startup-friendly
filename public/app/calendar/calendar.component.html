@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="calendar col-xs-12 col-sm-8">
+    <div class="calendar col-xs-12 col-sm-9">
 
         <md-button class="btn-calendar" ng-click="calCtrl.subtractWeek()"><i class="fa fa-angle-left"></i> Previous
         </md-button>
@@ -431,53 +431,42 @@
 
             </tbody>
         </table>
+        <div class="legend">
+            <div class="row">
+                <div class="col-xs-4">
+                    <div class="legend-color info"></div>
+                    <div class="legend-text">Available</div>
+                </div>
+
+                <div class="col-xs-4">
+                    <div class="legend-color danger"></div>
+                    <div class="legend-text">Booked</div>
+                </div>
+
+                <div class="col-xs-4">
+                    <div class="legend-color success"></div>
+                    <div class="legend-text">Selected</div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="calendar-sidebar col-xs-12 col-sm-4">
+    <div class="calendar-sidebar col-xs-12 col-sm-3">
         <div class="row">
             <md-button class="pull-right" ng-click="calCtrl.clearSelection()">Clear Selection</md-button>
         </div>
 
         <div class="dashboard">
             <div class="meeting-text">
-                <h2 class="calendar-message">
-                    {{ calCtrl.message }}
-                </h2>
+                <div class="calendar-message" ng-bind-html="calCtrl.message">
+
+                </div>
             </div>
             <div class="row">
                 <button class="book-button btn btn-submit center-block" ng-click="calCtrl.bookRoom()">Book Room!</button>
             </div>
         </div>
 
-        <div class="legend">
-            <h4 class="text-center">LEGEND</h4>
-            <div class="row">
-                <div class="col-xs-6">
-                    <div class="legend-color info"></div>
-                </div>
-                <div class="col-xs-6">
-                    <div class="legend-text">Available</div>
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-xs-6">
-                    <div class="legend-color danger"></div>
-                </div>
-                <div class="col-xs-6">
-                    <div class="legend-text">Booked</div>
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-xs-6">
-                    <div class="legend-color success"></div>
-                </div>
-                <div class="col-xs-6">
-                    <div class="legend-text">Selected</div>
-                </div>
-            </div>
-        </div>
 
     </div>
 

@@ -1,24 +1,35 @@
 <div class="app-content edit-slots">
     <div class="container">
-
-
-        <div class="white-div">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6">
-                    <img ng-src="{{ ctrl.room.image }}" class="img-responsive">
-                </div>
-                <div class="col-xs-12 col-sm-6">
+        <div class="row">
+            <div class="col-xs-12 col-sm-3">
+                <div class="room-image-div">
+                    <img ng-src="{{ ctrl.room.image }}" class="img-responsive room-image">
                     <img ng-src="{{ ctrl.room.logo }}" class="img-responsive company-logo">
-                    <h1>{{ ctrl.room.name }}</h1>
-                    <p>{{ ctrl.room.company }}</p>
-                    <p>{{ ctrl.room.address }}, Floor {{ ctrl.room.floor }}, Entrance {{ ctrl.room.entrance }}</p>
-                    <p>{{ ctrl.room.city_part }} Tel Aviv</p>
+                </div>
+                <div>
+
+                    <h3>{{ ctrl.room.name }}</h3>
+                    <h4>{{ ctrl.room.company }}, {{ ctrl.room.address }}<span ng-show="ctrl.room.floor != ''">, Floor {{ ctrl.room.floor }}</span><span
+                            ng-show="ctrl.room.entrance != ''">, Entrance {{ ctrl.room.entrance }}</span>.</h4>
+                    <p>{{ ctrl.room.description }}</p>
+                    <br>
+                    <h5>
+                        <md-icon>phone</md-icon>
+                        &nbsp; &nbsp; <a href="tel:{{ ctrl.room.phone }}">{{ ctrl.room.phone }}</a></h5>
+                    <h5>
+                        <md-icon>people</md-icon>
+                        &nbsp; &nbsp; Up to {{ ctrl.room.guests }} guests
+                    </h5>
+                    <h5>
+                        <md-icon>wifi</md-icon>
+                        &nbsp; &nbsp; {{ ctrl.room.wifi_name }} - {{ ctrl.room.wifi_pass }}
+                    </h5>
+
                 </div>
             </div>
-        </div>
 
-        <div class="row">
-            <div class="black-div col-xs-12 col-sm-8 col-sm-offset-2 text-center">
+
+            <div class="col-xs-12 col-sm-9">
 
 
                 <form ng-submit="ctrl.saveSlot()" class="form-inline slot-form">
@@ -48,7 +59,8 @@
                         </select>
                     </div>
                     <div class='form-group datepicker-div' ng-show="ctrl.newSlot.isDate">
-                        <md-datepicker md-min-date="ctrl.minDate" ng-model="ctrl.newSlot.date" md-placeholder="When?"></md-datepicker>
+                        <md-datepicker md-min-date="ctrl.minDate" ng-model="ctrl.newSlot.date"
+                                       md-placeholder="When?"></md-datepicker>
                     </div>
 
 
@@ -68,17 +80,6 @@
                             <option ng-value="18">18:00</option>
                             <option ng-value="19">19:00</option>
                             <option ng-value="20">20:00</option>
-                            <option ng-value="21">21:00</option>
-                            <option ng-value="22">22:00</option>
-                            <option ng-value="23">23:00</option>
-                            <option ng-value="0">00:00</option>
-                            <option ng-value="1">01:00</option>
-                            <option ng-value="2">02:00</option>
-                            <option ng-value="3">03:00</option>
-                            <option ng-value="4">04:00</option>
-                            <option ng-value="5">05:00</option>
-                            <option ng-value="6">06:00</option>
-                            <option ng-value="7">07:00</option>
                         </select>
                     </div>
                     <div class='form-group'>
@@ -97,17 +98,6 @@
                             <option ng-value="18">18:00</option>
                             <option ng-value="19">19:00</option>
                             <option ng-value="20">20:00</option>
-                            <option ng-value="21">21:00</option>
-                            <option ng-value="22">22:00</option>
-                            <option ng-value="23">23:00</option>
-                            <option ng-value="0">00:00</option>
-                            <option ng-value="1">01:00</option>
-                            <option ng-value="2">02:00</option>
-                            <option ng-value="3">03:00</option>
-                            <option ng-value="4">04:00</option>
-                            <option ng-value="5">05:00</option>
-                            <option ng-value="6">06:00</option>
-                            <option ng-value="7">07:00</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -116,11 +106,10 @@
 
 
                 </form>
-            </div>
-        </div>
+
 
                 <h2 class="text-center">Slots</h2>
-        <div class="white-div">
+
                 <table class="table table-striped table-hover slot-table">
                     <tr>
                         <th>
@@ -153,6 +142,7 @@
                         </td>
                     </tr>
                 </table>
+            </div>
         </div>
     </div><!-- .container -->
 </div><!-- .app-content -->

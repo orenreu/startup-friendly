@@ -24,35 +24,50 @@
 </head>
 
 <body ng-app="app">
-<nav class="navbar navbar-default navigation">
+<nav class="navbar navbar-default navigation" ng-controller="ToolbarController as toolBarCtrl">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header" ng-controller="ToolbarController as toolBarCtrl">
+        <div class="navbar-header">
             <a class="navbar-brand" href="/">
                 <img src="images/header/logo.png">
             </a>
 
+            <button type="button" class="btn navbar-toggle collapsed" ng-click="isCollapsed = !isCollapsed">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse" uib-collapse="!isCollapsed">
             <ul class="nav navbar-nav pull-right">
                 <li>
-                    <a href title="Sign in" ng-click="toolBarCtrl.login()" class="login-btn" ng-hide="toolBarCtrl.isLogged()">
+                    <a href title="Sign in" ng-click="toolBarCtrl.login()" class="login-btn"
+                       ng-hide="toolBarCtrl.isLogged()">
                         <button class="btn btn-default sign-in">Sign in</button>
                     </a>
 
                     <md-menu-bar class="avatar-menu" ng-show="toolBarCtrl.isLogged()">
                         <md-menu>
-                            <md-button ng-click="$mdOpenMenu($event)" class="md-icon-button" aria-label="Open avatar menu">
+                            <md-button ng-click="$mdOpenMenu($event)" class="md-icon-button"
+                                       aria-label="Open avatar menu">
                                 <img class="avatar" ng-src="{{ toolBarCtrl.user.photo }}">
                             </md-button>
                             <md-menu-content>
                                 <md-menu-item>
-                                    <md-button href="/login/logout" target="_self" aria-label="Do something">
-                                        <md-icon class="material-icons md-light md-48"> face </md-icon>
+                                    <md-button href="/meetings/{{ toolBarCtrl.user.id }}" target="_self" aria-label="Do something">
+                                        <md-icon class="material-icons md-light md-48"> face</md-icon>
                                         My Meetings
+                                    </md-button>
+                                </md-menu-item>
+                                <md-menu-item ng-show="toolBarCtrl.user.isAdmin">
+                                    <md-button href="/room/create" target="_self" aria-label="Sign Out">
+                                        <md-icon class="material-icons md-light md-48"> create</md-icon>
+                                        Create
                                     </md-button>
                                 </md-menu-item>
                                 <md-menu-item>
                                     <md-button href="/auth/logout" target="_self" aria-label="Sign Out">
-
                                         <md-icon md-svg-src="images/header/sign-out.svg"
                                                  aria-label="sign out"></md-icon>
                                         Sign out
@@ -63,9 +78,10 @@
                     </md-menu-bar>
                 </li>
             </ul>
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
+        </div><!-- #navbar-collapse -->
+    </div><!-- /.container -->
 </nav>
+
 <div ui-view></div>
 <footer class="site-footer">
 
@@ -77,12 +93,11 @@
 <script src="/scripts/angular-mocks/angular-mocks.js"></script>
 <script src="/scripts/angular-messages/angular-messages.js"></script>
 <script src="/scripts/angular-touch/angular-touch.js"></script>
-<script src="/scripts/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
+<script src="/scripts/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
 <script src="/scripts/angular-material/angular-material.js"></script>
 <script src="/scripts/ng-file-upload/dist/ng-file-upload.js"></script>
 <script src="/scripts/moment/moment.js"></script>
-
-
+<script src="/scripts/angular-utils-pagination/dirPagination.js"></script>
 
 
 <!-- App Scripts -->
@@ -98,6 +113,7 @@
 <script src="/app/rooms/image-upload/image-upload.js"></script>
 <script src="/app/rooms/logo-upload/logo-upload.js"></script>
 <script src="/app/calendar/calendar.js"></script>
+<script src="/app/meetings/meetings.js"></script>
 
 </body>
 </html>

@@ -3,10 +3,15 @@
     <div class="container">
 
         <search-bar></search-bar>
-
-        <div class="grid">
+        <div class="is-empty-div" ng-show="roomsCtrl.isEmpty()">
+            <div class="is-emtpy-content text-center">
+                <img class="center-block" src="/images/sad.png">
+                <h4>No rooms fit this search</h4>
+            </div>
+        </div>
+        <div class="grid" ng-hide="roomsCtrl.isEmpty()">
             <div id="{{ room.id }}" class="room col-xs-12 col-sm-6 col-md-4"
-                 ng-repeat="room in roomsCtrl.rooms">
+                 dir-paginate="room in roomsCtrl.rooms | itemsPerPage: 9">
                 <a href="/#room/{{ room.id }}">
                     <div class="card">
                         <img ng-src="{{ room.image }}" class="img-responsive">
@@ -25,6 +30,7 @@
                     </div><!-- .card -->
                 </a>
             </div><!-- .room -->
+            <dir-pagination-controls></dir-pagination-controls>
         </div><!-- .grid -->
     </div><!-- .container -->
 </div><!-- .app-content -->

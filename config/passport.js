@@ -13,12 +13,11 @@ var FacebookStrategy = require('passport-facebook').Strategy;
 var configAuth = require('./auth');
 
 
-
-passport.serializeUser(function(user, cb) {
+passport.serializeUser(function (user, cb) {
     cb(null, user);
 });
 
-passport.deserializeUser(function(obj, cb) {
+passport.deserializeUser(function (obj, cb) {
     cb(null, obj);
 });
 
@@ -48,7 +47,8 @@ passport.use(new FacebookStrategy({
                     firstName: profile.name.givenName,
                     lastName: profile.name.familyName,
                     email: profile.emails[0].value,
-                    photo: profile.photos[0].value
+                    photo: profile.photos[0].value,
+                    isAdmin:false
                 })
             }
             else {
@@ -58,7 +58,8 @@ passport.use(new FacebookStrategy({
             id: user.id,
             firstName: user.firstName,
             lastName: user.lastName,
-            photo: user.photo
+            photo: user.photo,
+            isAdmin: user.isAdmin
         })).catch(
             err => {
                 done(err)
@@ -71,7 +72,7 @@ passport.use(new FacebookStrategy({
 router.get('/facebook', passport.authenticate('facebook', {scope: ['email', 'public_profile']}))
 router.get('/facebook/callback',
     passport.authenticate('facebook', {
-        successRedirect: '/',
+        successRedirect: 'back',
         failureRedirect: '/login'
     }));
 router.get('/logout', function (req, res) {

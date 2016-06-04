@@ -6,6 +6,7 @@
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
+@import url("https://fonts.googleapis.com/css?family=Raleway:200,600");
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -5816,10 +5817,13 @@ button.close {
 html {
   box-sizing: border-box;
   position: relative;
-  min-height: 100%; }
+  min-height: 100%;
+  height: auto; }
 
 body {
-  margin: 0 0 100px; }
+  margin: 0;
+  min-height: 100%;
+  height: auto; }
 
 /**
  * Make all elements from the DOM inherit from the parent box-sizing
@@ -5918,6 +5922,9 @@ body {
   .navbar-nav .sign-in:hover {
     background-color: transparent; }
 
+.navbar-default .navbar-toggle {
+  margin-top: 25px; }
+
 nav.navbar {
   padding-top: 30px; }
 
@@ -5947,9 +5954,6 @@ nav.navbar {
 
 md-menu-content {
   border-radius: 5px; }
-
-.navbar-header {
-  width: 100%; }
 
 footer.site-footer {
   height: 100px;
@@ -5995,7 +5999,7 @@ label {
 .btn-facebook {
   background-color: #3b5998;
   color: white;
-  border-radius: 50px;
+  border-radius: 8px;
   padding: 5px 20px;
   text-transform: none; }
   .btn-facebook:hover, .btn-facebook:active, .btn-facebook:focus {
@@ -6003,7 +6007,6 @@ label {
     color: white; }
 
 .app-content.new-room {
-  background-image: url("../../../images/meeting_room_2.jpg");
   background-size: cover;
   padding-top: 150px; }
 
@@ -6045,7 +6048,6 @@ label {
   justify-content: center; }
 
 .calendar {
-  padding-top: 30px;
   padding-bottom: 30px; }
   .calendar table {
     width: 100%;
@@ -6063,12 +6065,10 @@ label {
 .table > tbody > tr > td.success {
   background-color: #dff0d8 !important; }
 
-.calendar-sidebar {
-  padding-top: 31px; }
-
 .legend {
   border: 1px solid #ddd;
-  padding-bottom: 15px; }
+  padding: 10px;
+  border-radius: 4px; }
   .legend .info {
     background-color: #d9edf7; }
   .legend .success {
@@ -6077,9 +6077,11 @@ label {
     background-color: #f2dede; }
   .legend .legend-color {
     border-radius: 3px;
-    height: 20px;
-    width: 100px;
-    float: right; }
+    height: 14px;
+    width: 90px;
+    float: right;
+    margin-top: 2px;
+    margin-right: 20px; }
 
 .book-button {
   margin-bottom: 50px; }
@@ -6089,11 +6091,33 @@ label {
   padding: 20px 10px; }
 
 .calendar-message {
-  font-size: 33px;
-  line-height: 43px; }
+  font-family: 'Raleway';
+  font-weight: 200;
+  font-size: 25px;
+  line-height: 43px;
+  font-weight: 100; }
+
+.calendar-message .thin {
+  font-weight: 600; }
 
 .app-content.room-details {
-  padding-top: 150px; }
+  padding-top: 150px;
+  min-height: calc(100vh - 100px); }
+
+.slot-form {
+  margin-top: 48px; }
+
+.room-image-div {
+  position: relative;
+  margin-top: 48px; }
+
+.room-image-div .company-logo {
+  position: absolute;
+  bottom: 8px;
+  right: 8px; }
+
+.room-image-div .room-image {
+  border-radius: 4px; }
 
 .app-content.room-list {
   padding-top: 150px; }
@@ -6105,6 +6129,7 @@ label {
   margin-bottom: 30px; }
 
 .room-list .grid {
+  min-height: calc(100vh - 302px);
   padding-top: 50px;
   padding-bottom: 50px;
   display: inline-block;
@@ -6155,11 +6180,15 @@ label {
   width: 105%;
   margin-top: -28px; }
 
+.is-empty-div {
+  height: calc(100vh - 302px);
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
 .app-content.edit-slots {
-  background-image: url("../../../images/calendar.jpg");
-  background-size: cover;
   padding-top: 150px;
-  min-height: 100vh;
+  min-height: calc(100vh - 100px);
   width: 100vw; }
 
 .white-div {
@@ -6209,6 +6238,11 @@ label {
 .form-inline .form-control.day-select {
   width: 185px; }
 
+.app-content.meetings {
+  padding-top: 150px;
+  min-height: calc(100vh - 100px);
+  width: 100vw; }
+
 .navigation {
   position: absolute;
   width: 100%; }
@@ -6216,14 +6250,13 @@ label {
 .hero-image {
   background-image: url("../../../images/bg.jpg");
   background-size: cover;
-  height: 100vh;
-  width: 100vw; }
+  min-height: calc(100vh - 100px); }
 
 .hero-box {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh; }
+  min-height: calc(100vh - 100px); }
 
 .hero-text {
   padding-bottom: 20px;
