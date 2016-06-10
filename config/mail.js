@@ -32,7 +32,6 @@ var mailer = {};
 mailer.sendMail = function(email, name, subject, html, mailData) {
 
 
-
     var html = fs.readFileSync(__dirname+'/templates/'+html);
 
     var sendTemplateEmail = transporter.templateSender({
@@ -41,9 +40,6 @@ mailer.sendMail = function(email, name, subject, html, mailData) {
     }, {
         from: '"'+constants.SYSTEM_NAME+'"'+'<'+constants.SYSTEM_EMAIL+'>', // sender address
     });
-
-
-
 
 
     sendTemplateEmail({
@@ -56,7 +52,40 @@ mailer.sendMail = function(email, name, subject, html, mailData) {
         }
     });
 
+}
 
+
+
+mailer.sendContact = function(email, name, subject, message) {
+
+
+    var mailOptions = {
+        from: '"Startup-Friendly" <hello@startup-friendly.com>', // sender address
+        to: constants.ADMIN_EMAIL, // list of receivers
+        subject: 'Someone contacted you via startup-friendly.com', // Subject line
+        html: '<html>' +
+        '<body style="text-align:center;">' +
+        '<h2>Someone sent a message via startup-friendly.com</h2>' +
+        '<br>' +
+        '<p>Name: ' + name + '</p>' +
+        '<p>Email: ' + email + '</p>' +
+        '<p>Subject: ' + subject + '</p>' +
+        '<p>Message: ' + message + '</p>' +
+        '<br>' +
+        '<br>' +
+        '<p>Have a great day!</p>' +
+        '</body>' +
+        '</html>' // html body
+    };
+
+// send mail with defined transport object
+    transporter.sendMail(mailOptions, function(error, info){
+        if(error){
+            console.log(error)
+            return false;
+        }
+        return true;
+    });
 }
 
 module.exports = mailer;

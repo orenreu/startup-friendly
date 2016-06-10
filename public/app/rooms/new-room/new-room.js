@@ -18,7 +18,7 @@ angular.module('app').directive('newRoom', function () {
             var ctrl = this;
 
             ctrl.newRoom = {
-                name: "Great Room",
+               /* name: "Great Room",
                 company: "Benzo Media",
                 address: "3 fuld Bracha St.",
                 floor: "4",
@@ -32,7 +32,7 @@ angular.module('app').directive('newRoom', function () {
                 logo: "",
                 contact_name: "Oren Reuveni",
                 email: "orenreu@gmail.com",
-                phone: "054-4322918"
+                phone: "054-4322918"*/
             };
 
 

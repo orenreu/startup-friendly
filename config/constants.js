@@ -8,7 +8,7 @@
 
 var constants = {
 
-    ADMIN_EMAIL : 'oren@benzomedia.com',
+    ADMIN_EMAIL : 'hello@startup-friendly.com',
     SYSTEM_EMAIL: 'hello@startup-friendly.com',
     SYSTEM_NAME : 'Startup Friendly',
     SMTP_HOST: 'startup-friendly.com',

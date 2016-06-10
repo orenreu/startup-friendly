@@ -18,13 +18,27 @@ angular.module('app').controller('ToolbarController', [
     function ($scope, $rootScope, $http, $stateParams, $mdDialog, $mdMedia, $location) {
 
         var ctrl = this;
+        ctrl.loading = true;
 
         ctrl.user = {};
 
         $http.get("/api/user").then(function (response) {
             ctrl.user = response.data
            // console.log(ctrl.user);
+            ctrl.loading = false;
+
+            if(ctrl.user.id) {
+                mixpanel.identify(ctrl.user.id);
+                mixpanel.people.set({
+                $first_name:ctrl.user.firstName,
+                $last_name:ctrl.user.lastName,
+                $email: ctrl.user.email,
+                });
+            }
         })
+
+
+
 
 
         ctrl.isLogged = function () {
@@ -35,9 +49,10 @@ angular.module('app').controller('ToolbarController', [
             }
         }
 
-      
+
 
         ctrl.login = function () {
+            mixpanel.track("Login");
            openLogintDialog();
         }
 
@@ -63,6 +78,9 @@ angular.module('app').controller('ToolbarController', [
         };
 
 
+        ctrl.isHome = function(){
+            return $location.path() == '/';
+        }
 
 
         //Listen to time change and reBootstrap the app

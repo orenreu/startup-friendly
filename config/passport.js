@@ -54,14 +54,14 @@ passport.use(new FacebookStrategy({
             else {
                 return users[0]
             }
-        }).then(user => done(null, {
+        }).then(function(user){return done(null, {
             id: user.id,
             firstName: user.firstName,
             lastName: user.lastName,
             photo: user.photo,
             isAdmin: user.isAdmin
-        })).catch(
-            err => {
+        })}).catch(
+           function(err) {
                 done(err)
             }
         )

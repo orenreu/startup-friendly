@@ -59,6 +59,7 @@ angular.module('app').directive('searchBar', function () {
 
 
             function sendQuery() {
+                mixpanel.track("Search");
                 $rootScope.$broadcast("querySubmitted",{query: ctrl.query});
             }
         }

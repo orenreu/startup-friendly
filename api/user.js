@@ -7,6 +7,7 @@
  */
 
 const router = require('express').Router()
+const mailer = require('../config/mail')
 
 router.get('/', function(req,res) {
     if (req.isAuthenticated()) {
@@ -14,6 +15,25 @@ router.get('/', function(req,res) {
     }
     else
         res.json({})
+})
+
+
+router.post('/contact', function(req, res){
+    var form = req.body;
+
+   if(mailer.sendContact(form.email, form.name, form.subject, form.message)) {
+       var result ={
+           success: true
+       }
+       res.status(200).send(JSON.stringify(result))
+   } else {
+       var result ={
+           success: false
+       }
+       res.status(200).send(JSON.stringify(result))
+   }
+
+
 })
 
 module.exports = router

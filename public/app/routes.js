@@ -32,7 +32,18 @@ angular.module('app').config(function ($urlRouterProvider, $stateProvider, $loca
         .state('roomDetails', {
             url: '/room/:roomId',
             template: '<room-details></room-details>',
-
+        })
+        .state('about', {
+            url: '/page/about',
+            template: '<about></about>',
+        })
+        .state('contact', {
+            url: '/page/contact',
+            template: '<contact></contact>',
+        })
+        .state('terms', {
+            url: '/page/terms',
+            template: '<terms></terms>',
         })
         .state('meetings', {
             url: '/meetings/:user',

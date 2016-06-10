@@ -3,9 +3,36 @@
 // -----------------------------------------------------------------------------
 
 footer.site-footer {
-  height: $footerHeight;
   background-color: $footerColor;
   position: absolute;
   width: 100%;
   left: 0;
+  color: white;
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+  p {
+    margin-bottom: 0;
+  }
+  img {
+    max-width: 50px;
+  }
+
+  a {
+    color: white;
+  }
+
+}
+
+.footer-links-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 10px;
+  font-size: 15px;
+
+  li {
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
 }

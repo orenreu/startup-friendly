@@ -289,6 +289,7 @@ angular.module('app').directive('calendar', function () {
 
                 //Confirm Booking
                 ctrl.confirm = function() {
+
                     confrimBooking()
                     $mdDialog.cancel();
                 }
@@ -316,6 +317,7 @@ angular.module('app').directive('calendar', function () {
                             ctrl.selected = [];
                             $mdToast.show($mdToast.simple({position: "right bottom"}).textContent("Room was booked"));
                             startup();
+                            mixpanel.track("Book Room");
                         }, function (err) {
 
                         });

@@ -28,7 +28,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-
+app.set('port', 1024);
 
 
 var isAuthenticated = function (req, res, next) {
@@ -78,6 +78,7 @@ app.use('/api/meeting', meeting);
 function serveIndex(req, res) {
     res.sendFile(path.join(__dirname, '/public/index.html'))
 }
+app.get('/page/:pageType', serveIndex)
 app.get('/login', serveIndex)
 app.get('/room', serveIndex)
 app.get('/room/create', isAdmin, serveIndex)
@@ -86,8 +87,8 @@ app.get('/slots/:roomId', isAdmin, serveIndex)
 app.get('/meetings/:user',isSameUser, serveIndex)
 
 
-app.listen(3000);
-console.log('Listening on port 3000');
+app.listen(app.get('port'));
+console.log('Listening on port '+app.get('port')+" "+app.settings.env);
 
 
 

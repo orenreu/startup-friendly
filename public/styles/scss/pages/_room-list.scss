@@ -11,7 +11,7 @@
 }
 
 .room-list .grid {
-  min-height: calc(100vh - 302px);
+  min-height: calc(100vh - 202px);
   padding-top: 50px;
   padding-bottom: 50px;
   display: inline-block;
@@ -74,7 +74,7 @@
 }
 
 .is-empty-div {
-  height: calc(100vh - 302px);
+  height: calc(100vh - 202px);
   display: flex;
   align-items: center;
   justify-content: center;

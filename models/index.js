@@ -87,4 +87,4 @@ Meeting.belongsTo(Room, "room", "roomId", "id");
 
 
 
-module.exports = {Room, User, Meeting, r};
+module.exports = {Room: Room, User: User, Meeting: Meeting, r: r};

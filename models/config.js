@@ -5,7 +5,7 @@ var config = {
 	rethinkdb: {
 		host: "localhost",
 		port: 28015,
-		authKey: "",
+		authKey: "Oren1979",
 		db: "startup_friendly"
 	},
 	express: {

@@ -3,15 +3,33 @@
 // -----------------------------------------------------------------------------
 
 .navbar-nav .avatar-menu {
-  margin-top: 20px;
+
+  margin-top: 6px;
+
+  @include respond-to('small') {
+    margin-top: 20px;
+  }
+
+}
+
+img.logo {
+  max-width: 220px;
+}
+
+
+a.super-logo {
+  width: 220px;
+  height: 83px;
+  display: block;
+  background: url('/images/header/super_logo.png') no-repeat;
+}
+
+.home a.super-logo {
+  background-position: 0px -84px;
 }
 
 .navbar-nav .sign-in {
   margin-top: 10px;
-
-  &:hover {
-    background-color: transparent;
-  }
 }
 
 .navbar-default .navbar-toggle {
@@ -55,3 +73,23 @@ md-menu-content {
   border-radius: 5px;
 }
 
+.container > .navbar-header {
+  float:left;
+}
+
+.loader {
+  background-color: white;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 99999;
+  top: 0;
+  left: 0;
+  text-align: center;
+  padding-top: 50px;
+  font-size: 20px;
+}
+
+.login-dialog {
+  padding: 20px;
+}

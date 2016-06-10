@@ -66,6 +66,7 @@ angular.module('app').directive('meetings', function () {
                     function (result) {
                         ctrl.meetings.splice(index, 1);
                         $mdToast.show($mdToast.simple({position: "right bottom"}).textContent("Meeting was cancelled"));
+                        mixpanel.track("Cancell Meeting");
                     }, function (error) {
                         console.log(error);
                     });
