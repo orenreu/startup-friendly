@@ -21,18 +21,13 @@ router.get('/', function(req,res) {
 router.post('/contact', function(req, res){
     var form = req.body;
 
-   if(mailer.sendContact(form.email, form.name, form.subject, form.message)) {
-       var result ={
-           success: true
-       }
-       res.status(200).send(JSON.stringify(result))
-   } else {
-       var result ={
-           success: false
-       }
-       res.status(200).send(JSON.stringify(result))
-   }
-
+   mailer.sendContact(form.email, form.name, form.subject, form.message, function(err, result){
+           if(err != null) {
+               res.status(200).send(JSON.stringify({success: false}))
+           } else {
+               res.status(200).send(JSON.stringify({success: true}))
+           }
+       })
 
 })
 

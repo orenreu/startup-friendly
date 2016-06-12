@@ -56,13 +56,14 @@ mailer.sendMail = function(email, name, subject, html, mailData) {
 
 
 
-mailer.sendContact = function(email, name, subject, message) {
+mailer.sendContact = function(email, name, subject, message, res) {
 
 
     var mailOptions = {
         from: '"Startup-Friendly" <hello@startup-friendly.com>', // sender address
         to: constants.ADMIN_EMAIL, // list of receivers
         subject: 'Someone contacted you via startup-friendly.com', // Subject line
+        text: 'You recieved a message. From: '+name+'. Email: '+email+'. Subject: '+subject+'. Message: '+message,
         html: '<html>' +
         '<body style="text-align:center;">' +
         '<h2>Someone sent a message via startup-friendly.com</h2>' +
@@ -81,10 +82,9 @@ mailer.sendContact = function(email, name, subject, message) {
 // send mail with defined transport object
     transporter.sendMail(mailOptions, function(error, info){
         if(error){
-            console.log(error)
-            return false;
+          res(error, info);
         }
-        return true;
+        res(null, info);
     });
 }
 

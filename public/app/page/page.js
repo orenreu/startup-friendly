@@ -37,6 +37,8 @@ angular.module('app').directive('contact', function () {
         controller: function ($http) {
 
             var ctrl = this;
+            ctrl.isSending = false;
+            ctrl.message = '';
 
             ctrl.form = {
                 name: '',
@@ -47,12 +49,25 @@ angular.module('app').directive('contact', function () {
 
 
             ctrl.submitContact = function() {
-
+                ctrl.isSending = true;
+                ctrl.message = '';
 
                 $http.post('api/user/contact', ctrl.form)
                     .then(
                         function (response) {
+                            ctrl.isSending = false;
                             console.log(response);
+                            if(response.data.success == true){
+                                ctrl.form = {
+                                    name: '',
+                                    email: '',
+                                    subject: '',
+                                    message: ''
+                                }
+                                ctrl.message = "Thanks, your message was sent successfuly."
+                            } else {
+                                ctrl.message = "Oops, your message could not be sent. Please try again later."
+                            }
                         }, function (err) {
                             console.log(err);
                         });
