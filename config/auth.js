@@ -15,7 +15,7 @@ module.exports = {
     'facebookAuth' : {
         'clientID'      : '1100217973333725', // your App ID
         'clientSecret'  : '12b3922d9ad1473373fc13ee982fe7c1', // your App Secret
-        'callbackURL'   : 'http://startup-friendly.com:1024/auth/facebook/callback'
+        'callbackURL'   : 'http://startup-friendly.com/auth/facebook/callback'
     },
 
     'twitterAuth' : {
