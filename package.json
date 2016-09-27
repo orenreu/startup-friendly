@@ -4,7 +4,8 @@
   "description": "An app that helps share meeting rooms between startups.",
   "main": "app.js",
   "scripts": {
-    "start": "node app"
+    "start": "node app",
+    "production": "NODE_ENV=production node app"
   },
   "keywords": [
     "Meeting",
@@ -39,6 +40,7 @@
     "passport": "^0.3.2",
     "passport-facebook": "^2.1.1",
     "rethinkdb": "^2.3.1",
-    "thinky": "^2.2.8"
+    "thinky": "^2.2.8",
+    "webpack": "^1.13.2"
   }
 }
