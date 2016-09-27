@@ -28,7 +28,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-app.set('port', 1024);
+app.set('port', 8100);
 
 
 var isAuthenticated = function (req, res, next) {
@@ -57,11 +57,6 @@ var isSameUser = function(req, res, next) {
 
     res.redirect('/login');
 }
-
-
-
-
-
 
 
 
